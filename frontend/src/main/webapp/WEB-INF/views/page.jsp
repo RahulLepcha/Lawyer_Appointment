@@ -19,7 +19,9 @@
 <meta name="author" content="">
 
 <title>Lawyer Appointment - ${title}</title>
-
+<script>
+	window.menu = '{title}';
+</script>
 <!-- Bootstrap core CSS -->
 <link href="${vendor}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,11 +38,25 @@
 
 
 	<!-- Page Content -->
+	<!-- when Home is clicked -->
 	<c:if test="${UserClickHome==true}">
 		<%@include file="index.jsp"%>
 	</c:if>
+	<!-- when Sign up is clicked -->
+	<c:if test="${UserClicksignUp==true}">
+		<%@include file="signUp.jsp"%>
+	</c:if>
+	<!-- when About us is clicked -->
+	<c:if test="${UserClickaboutUs==true}">
+		<%@include file="aboutUs.jsp"%>
+	</c:if>
+	<!-- when forgot Password is clicked -->
+	<c:if test="${UserClickforgotPassword==true}">
+		<%@include file="forgotPassword.jsp"%>
+	</c:if>
 	
 	
+
 
 	<!-- Footer -->
 	<%@include file="./shared/footer.jsp"%>

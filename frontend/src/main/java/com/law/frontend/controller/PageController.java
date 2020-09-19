@@ -9,13 +9,35 @@ import org.springframework.web.servlet.ModelAndView;
 public class PageController {
 
 	
-		@RequestMapping(value= {"/","/index","/home"})
-		public ModelAndView index() {
-			ModelAndView mv=new ModelAndView("page");
-			mv.addObject("title","Home");
-			mv.addObject("UserClickHome",true);
-			return mv;
-		}
+	@RequestMapping(value= {"/","/index","/home"})
+	public ModelAndView index() {
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title","Home");
+		mv.addObject("UserClickHome",true);
+		return mv;
+	}
+	@RequestMapping(value= "/signUp")
+	public ModelAndView signUp() {
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title","Sign Up");
+		mv.addObject("UserClicksignUp",true);
+		return mv;
+	}
+	
+	@RequestMapping(value= "/aboutUs")
+	public ModelAndView aboutUs() {
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title","About Us");
+		mv.addObject("UserClickaboutUs",true);
+		return mv;
+	}
+	@RequestMapping(value= "/forgotPassword")
+	public ModelAndView forgotPassword() {
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title","forgotPassword");
+		mv.addObject("UserClickforgotPassword",true);
+		return mv;
+	}
 //
 //		@RequestMapping(value="/test")
 //		public ModelAndView test(@RequestParam(value="greeting",required=false)String greeting) {
