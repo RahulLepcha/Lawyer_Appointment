@@ -9,12 +9,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active" id="home"><a class="nav-link"
-					href="${contextRoot}/home">Home <span class="sr-only">(current)</span>
-				</a></li>
-				 <li class="nav-item" id="signUp"><a class="nav-link" href="${contextRoot}/signUp">Sign Up</a></li>
-					<li class="nav-item" id="aboutUs"><a class="nav-link"
-					href="${contextRoot}/aboutUs">About Us</a></li>
+				<li class="nav-item" id="home"><a class="nav-link" href="${contextRoot}/home">Home</a></li>
+				<li class="nav-item" id="signUp"><a class="nav-link" href="${contextRoot}/signUp">Sign Up</a></li>
+				<li class="nav-item" id="aboutUs"><a class="nav-link" href="${contextRoot}/aboutUs">About Us</a></li>
 				<form class="form-inline">
 					<input class="form-control mr-sm-2" type="text"
 						placeholder="E-Mail" name="username"> <input

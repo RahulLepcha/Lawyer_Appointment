@@ -20,10 +20,11 @@
 
 <title>Lawyer Appointment - ${title}</title>
 <script>
-	window.menu = '{title}';
+	window.menu= '${title}';
 </script>
 <!-- Bootstrap core CSS -->
 <link href="${vendor}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="${css}/custom.css" rel="stylesheet">
@@ -33,7 +34,7 @@
 <body>
 
 	<!-- Navigation -->
-	<%@include file="./shared/default_nav.jsp"%>
+	<%@include file="./shared/log_nav.jsp"%>
 
 
 
@@ -54,7 +55,30 @@
 	<c:if test="${UserClickforgotPassword==true}">
 		<%@include file="forgotPassword.jsp"%>
 	</c:if>
+	<!-- when client in is clicked -->
+	<c:if test="${UserClickclient_Index==true}">
+		<%@include file="./Client/client_Index.jsp"%>
+	</c:if>
 	
+	<!-- when client in is clicked -->
+	<c:if test="${UserClickclient_I==true}">
+		<%@include file="./Client/client_I.jsp"%>
+	</c:if>
+	
+	<!-- when Case in is clicked -->
+	<c:if test="${UserClickCase_Index==true}">
+		<%@include file="./Case/Case_Index.jsp"%>
+	</c:if>
+	
+		<!-- when Case_I in is clicked -->
+	<c:if test="${UserClickCase_I==true}">
+		<%@include file="./Case/Case_I.jsp"%>
+	</c:if>
+	
+	<!-- when Court_Add in is clicked -->
+	<c:if test="${UserClickCourt_Add==true}">
+		<%@include file="./Court_Add.jsp"%>
+	</c:if>
 	
 
 
@@ -65,6 +89,8 @@
 	<script src="${vendor}/jquery/jquery.min.js"></script>
 	<script src="${vendor}/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	<script src="${js}/myapp.js"></script>
+	
 </body>
 
 </html>
