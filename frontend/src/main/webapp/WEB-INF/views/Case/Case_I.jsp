@@ -1,5 +1,5 @@
 <div class="container case-wrapper-scroll-y case-custom-scrollbar">
-<legend>${prop} Case Detail</legend>
+	<legend>${prop} Case Detail</legend>
 	<form>
 		<fieldset>
 
@@ -11,6 +11,14 @@
 					</div>
 					<div class="col">
 						<label for="exampleSelect1">Court Name</label>
+					</div>
+					<div class="col">
+						<div class="custom-control custom-switch">
+							<input type="checkbox" class="custom-control-input"
+								id="customSwitch1" checked=""> <label
+								class="custom-control-label" for="customSwitch1">Priority
+								Case</label>
+						</div>
 					</div>
 				</div>
 				<div class="row">
@@ -44,6 +52,7 @@
 						</div>
 
 					</div>
+					<div class="col-sm"></div>
 				</div>
 			</div>
 
@@ -80,7 +89,6 @@
 				</div>
 
 			</div>
-
 			<!-- Adding all the Dates -->
 			<div class="row">
 				<div class="col">
@@ -89,7 +97,7 @@
 						<label class="col-form-label" for="inputDefault">Initial
 							Date</label>
 						<!-- Date Picker needed for time being im using text box -->
-						<input type="text" class="form-control"
+						<input type="text" class="form-control datepicker date fa fa-clock-o"
 							placeholder="Case initial Date" id="InitDate"
 							style="width: 150px">
 					</div>
@@ -100,7 +108,7 @@
 						<label class="col-form-label" for="inputDefault">Previous
 							Date</label>
 						<!-- Date Picker needed for time being im using text box -->
-						<input type="text" class="form-control"
+						<input type="text" class="form-control  datepicker date fa fa-clock-o"
 							placeholder="Case Previous Date" id="PDate" style="width: 150px">
 					</div>
 
@@ -110,7 +118,7 @@
 					<div class="form-group">
 						<label class="col-form-label" for="inputDefault">Next Date</label>
 						<!-- Date Picker needed for time being im using text box -->
-						<input type="text" class="form-control"
+						<input type="text" class="form-control  datepicker date fa fa-clock-o"
 							placeholder="Case Next Date" id="NDate" style="width: 150px">
 					</div>
 				</div>
