@@ -1,18 +1,24 @@
 package com.law.frontend.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.law.backend.dao.ProfileDAO;
+
 @Controller
 public class PageController {
 
+	@Autowired
+	private ProfileDAO profileDA;
 	
 	@RequestMapping(value= {"/","/index","/home"})
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("title","Home");
+		mv.addObject("pro",profileDA.list());
 		mv.addObject("UserClickHome",true);
 		return mv;
 	}
@@ -119,5 +125,8 @@ public class PageController {
 			mv.addObject("greeting",greeting);
 			return mv;
 		}
+		
+		
+		
 
 }

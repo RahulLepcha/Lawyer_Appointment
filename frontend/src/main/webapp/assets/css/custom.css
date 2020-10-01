@@ -5,9 +5,11 @@
  */
 html{
 	height: 100%;
+	width: 100%;
 }
 body {
         padding-top: 56px;
+        width: 100%;
 }
 .content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */

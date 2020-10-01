@@ -12,6 +12,9 @@
    ">
 
 	<context:component-scan	base-package="com.law.frontend.controller" />
+	<context:component-scan	base-package="com.law.backend" />
+	
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container case-wrapper-scroll-y case-custom-scrollbar">
 	<!-- Image Slide Show -->
 	<div class="row">
 		<div class="col-lg-0">
@@ -18,13 +18,13 @@
 					</div>
 					<div class="carousel-item">
 						<img class="d-block img-fluid"
-							src="https://annebollinger.com/img/Games/Backgrounds/anp_carriole2.jpg"
+							src="https://i0.wp.com/gerberfreestyle.com.au/wp-content/uploads/2019/06/sheep_sketch_orange-small.jpg?fit=1200%2C350&ssl=1"
 							alt="Second slide">
 					</div>
 					<div class="carousel-item">
 						<img class="d-block img-fluid"
-							src="https://m.media-amazon.com/images/I/71-Xq5iXZZL.RM_SX1200_.jpg"
-							alt="Third slide">
+							src="https://t4.ftcdn.net/jpg/02/22/44/07/240_F_222440773_j510MqI3S0N72iFKSLhsWqLubtP1xUYX.jpg"
+							alt="Third slide" style="height:350px; ">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -38,17 +38,17 @@
 				</a>
 			</div>
 			<!-- Slide Show End -->
-			<!-- Data Content To be populate -->
-			<!-- /.row -->
-
 		</div>
-		<!-- /.col-lg-9 -->
 	</div>
-	<!-- /.row -->
-	<!-- New row -->
+
+	<!-- place for single row -->
 	<div class="row">
-		<!-- date  -->
-		<!-- date end -->
+		<div class="col-sm-12">
+			<p>ba ba black sheep Place for breadcruMB</p>
+		</div>
 	</div>
+	<!-- New row -->
+		<div id="calendar"></div>
+	<!-- row end -->
 </div>
 <!-- /.container -->
