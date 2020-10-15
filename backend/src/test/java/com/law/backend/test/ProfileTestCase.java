@@ -37,10 +37,8 @@ public class ProfileTestCase {
 
 	@Test
 	public void testProfileCurd() {
-		
-		
-		//Add Opreation to table
-		
+
+		// Add Opreation to table
 		p = new Profile();
 		p.setUname("Rahul");
 		p.setUmobile("8624971999");
@@ -56,19 +54,17 @@ public class ProfileTestCase {
 		p.setUpassword("arem123");
 
 		assertEquals("Succesfully added new Profile", true, profileDA.add(p));
-		
-		//Updating the vlue and upadting the value of mobile number
-		
-		p=profileDA.get(2);
+
+		// Updating the vlue and upadting the value of mobile number
+
+		p = profileDA.get(3);
 		p.setUmobile("8413896733");
 		assertEquals("Succesfully updated the Mobile number", true, profileDA.update(p));
-		
-		//deleteing the value from the database
-		p=profileDA.get(2);
+
+		// deleteing the value from the database
+		p = profileDA.get(4);
 		assertEquals("Succesfully updated the Mobile number", true, profileDA.delete(p));
-		
-		
-		
+
 	}
 
 }

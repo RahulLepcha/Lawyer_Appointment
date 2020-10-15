@@ -53,7 +53,7 @@ public class ProfileDAOimpl implements ProfileDAO {
 	@Override
 	public boolean update(Profile profile) {
 		try {
-			//Adding the profile shit
+			//Updating the profile shit
 			sessionFactory.getCurrentSession().update(profile);
 			return true;
 		
@@ -67,7 +67,7 @@ public class ProfileDAOimpl implements ProfileDAO {
 	@Override
 	public boolean delete(Profile profile) {
 		try {
-			//Adding the profile shit
+			//Deleting the profile shit
 			sessionFactory.getCurrentSession().delete(profile);
 			return true;
 		
