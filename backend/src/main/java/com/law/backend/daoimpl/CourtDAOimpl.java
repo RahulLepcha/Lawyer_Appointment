@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.law.backend.dao.CourtDAO;
 import com.law.backend.dto.Court;
-import com.law.backend.dto.Profile;
 
 @Repository("courtDA")
 @Transactional
@@ -17,8 +16,7 @@ public class CourtDAOimpl implements CourtDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	
+
 	@Override
 	public List<Court> list() {
 		// TODO Auto-generated method stub
@@ -34,10 +32,10 @@ public class CourtDAOimpl implements CourtDAO {
 	@Override
 	public boolean add(Court court) {
 		try {
-			//Adding the profile shit
+			// Adding the profile shit
 			sessionFactory.getCurrentSession().persist(court);
 			return true;
-		
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -48,29 +46,39 @@ public class CourtDAOimpl implements CourtDAO {
 	@Override
 	public boolean update(Court court) {
 		try {
-			//Updating the profile shit
+			// Updating the profile shit
 			sessionFactory.getCurrentSession().update(court);
 			return true;
-		
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			return false;
-		}    
+		}
 	}
 
 	@Override
 	public boolean delete(Court court) {
 		try {
-			//Deleting the profile shit
+			// Deleting the profile shit
 			sessionFactory.getCurrentSession().delete(court);
 			return true;
-		
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			return false;
-		}    
+		}
+	}
+
+	@Override
+	public int getCrtId(String crtName) {
+		// TODO Auto-generated method stub
+		String crtId = "From Court where CrtName = :crtName";
+		List<Court> c = sessionFactory.getCurrentSession().createQuery(crtId, Court.class)
+				.setParameter("crtName", crtName).getResultList();
+		Court v=(Court)c.get(0);
+		return v.getCrtid();
 	}
 
 }

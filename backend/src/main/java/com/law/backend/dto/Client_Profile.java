@@ -1,10 +1,12 @@
 package com.law.backend.dto;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Client_Profile {
 	
 	//declaring the attribute
@@ -61,7 +63,6 @@ public class Client_Profile {
 		public void setLid(int lid) {
 			Lid = lid;
 		}
-		
 		
 		@Override
 		public String toString() {

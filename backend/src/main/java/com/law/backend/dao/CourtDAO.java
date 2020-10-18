@@ -9,6 +9,8 @@ public interface CourtDAO {
 	List<Court> list();
 
 	Court get(int id);
+	
+	int getCrtId(String crtName);
 
 	boolean add(Court court);
 

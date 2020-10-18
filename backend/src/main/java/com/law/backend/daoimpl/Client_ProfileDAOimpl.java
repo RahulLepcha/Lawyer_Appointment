@@ -9,8 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dto.Client_Profile;
+import com.law.backend.dto.Profile;
 
-@Repository("clientprofileDA*")
+@Repository("clientprofileDA")
 @Transactional
 public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 
@@ -73,6 +74,15 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 			return false;
 		}    
 	}
+
+	@Override
+	public int getUid(String userEmail) {
+		String getUserID="From Profile where Uemail = :emailid";
+		List<Profile> c = sessionFactory.getCurrentSession().createQuery(getUserID, Profile.class)
+				.setParameter("emailid", userEmail).getResultList();
+		Profile v=(Profile)c.get(0);
+		return v.getUid();
+		}
 
 	
 
