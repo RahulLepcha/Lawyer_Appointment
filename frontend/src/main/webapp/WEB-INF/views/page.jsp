@@ -35,7 +35,7 @@
 <body>
 
 	<!-- Navigation -->
-	<%@include file="./shared/log_nav.jsp"%>
+	<%@include file="./shared/default_nav.jsp"%>
 
 
 

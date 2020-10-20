@@ -13,4 +13,7 @@ public interface Crt_CaseDAO {
 	boolean add (Crt_Case crt_Case);
 	boolean update (Crt_Case crt_Case);
 	boolean delete (Crt_Case crt_Case);
+	int getUid(String UserEmail);
+	int getCid(String ClientName);
+	int getCrtid(String CourtName);
 }
