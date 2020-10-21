@@ -13,6 +13,14 @@ public class Crt_Case {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Case_id")
 	private int CaseId;
+	@Column(name="case_Uid")
+	private String caseuID;
+	public String getCaseuID() {
+		return caseuID;
+	}
+	public void setCaseuID(String caseuID) {
+		this.caseuID = caseuID;
+	}
 	@Column(name = "C_id")
 	private int Cid;
 	@Column(name = "Crt_id")
@@ -94,9 +102,9 @@ public class Crt_Case {
 
 	@Override
 	public String toString() {
-		return "Crt_Case [CaseId=" + CaseId + ", Cid=" + Cid + ", Crtid=" + Crtid + ", OppositionPartyName="
-				+ OppositionPartyName + ", CaseBrief=" + CaseBrief + ", CaseIdate=" + CaseIdate + ", CasePriority="
-				+ CasePriority + ", Lid=" + Lid + "]";
+		return "Crt_Case [CaseId=" + CaseId + ", caseuID=" + caseuID + ", Cid=" + Cid + ", Crtid=" + Crtid
+				+ ", OppositionPartyName=" + OppositionPartyName + ", CaseBrief=" + CaseBrief + ", CaseIdate="
+				+ CaseIdate + ", CasePriority=" + CasePriority + ", Lid=" + Lid + "]";
 	}
 
 }

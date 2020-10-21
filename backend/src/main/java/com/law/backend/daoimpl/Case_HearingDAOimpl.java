@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.law.backend.dao.Case_HearingDAO;
 import com.law.backend.dto.Case_Hearing;
+import com.law.backend.dto.Client_Profile;
+import com.law.backend.dto.Crt_Case;
 
 @Repository("CaseHearingDA")
 @Transactional
@@ -69,6 +71,26 @@ public class Case_HearingDAOimpl implements Case_HearingDAO {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	@Override
+	public Crt_Case getCaseIDs(String clientname, String opponentname) {
+		int getClientId=getcid(clientname);
+		String getCaseDetails="From Crt_Case where OppositionPartyName= :oppname and Cid= :cid";
+		List<Crt_Case> c = sessionFactory.getCurrentSession().createQuery(getCaseDetails, Crt_Case.class)
+				.setParameter("oppname", opponentname)
+				.setParameter("cid", getClientId).getResultList();
+		Crt_Case v=(Crt_Case)c.get(0);
+		return v;
+	}
+	
+	private int getcid(String ClientName)
+	{
+		String getClientID="From Client_Profile where Cname = :cname";
+		List<Client_Profile> c = sessionFactory.getCurrentSession().createQuery(getClientID, Client_Profile.class)
+				.setParameter("cname", ClientName).getResultList();
+		Client_Profile v=(Client_Profile)c.get(0);
+		return v.getCid();
 	}
 
 }
