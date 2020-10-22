@@ -27,6 +27,14 @@ public class Case_Hearing {
 	private String PreviousDate;
 	@Column(name="Next_Date")
 	private String NextDate;
+	@Column(name="Appointment_time")
+	private String AppointmentTime;
+	public String getAppointmentTime() {
+		return AppointmentTime;
+	}
+	public void setAppointmentTime(String appointmentTime) {
+		AppointmentTime = appointmentTime;
+	}
 	@Column(name="L_id")
 	private int Lid;
 	public int getHId() {
@@ -86,8 +94,8 @@ public class Case_Hearing {
 	@Override
 	public String toString() {
 		return "Case_Hearing [HId=" + HId + ", CaseId=" + CaseId + ", Cid=" + Cid + ", CrtId=" + CrtId + ", Stage="
-				+ Stage + ", Brief=" + Brief + ", PreviousDate=" + PreviousDate + ", NextDate=" + NextDate + ", Lid="
-				+ Lid + "]";
+				+ Stage + ", Brief=" + Brief + ", PreviousDate=" + PreviousDate + ", NextDate=" + NextDate
+				+ ", AppointmentTime=" + AppointmentTime + ", Lid=" + Lid + "]";
 	}
 	
 
