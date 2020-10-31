@@ -23,14 +23,11 @@
 				</div>
 				<div class="row">
 					<div class="col-sm form-inline">
-
-						<select class="form-control" id="C_name" style="width: 150px">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
+				<select class="form-control" id="C_name" style="width: 150px">
+						<c:forEach items="${clientNames}" var="cname">
+								<option>${cname}</option>
+								</c:forEach>
+							</select>
 						<div class="col-sm">
 							<a class="btn btn-outline-success my-2 my-sm-2"
 								href="${contextRoot}/client_I" role="button">Add Client</a>
@@ -40,11 +37,9 @@
 					<div class="col-sm form-inline">
 
 						<select class="form-control" id="Crt_name" style="width: 150px">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
+							<c:forEach items="${crtNames}" var="crtname">
+								<option>${crtname}</option>
+								</c:forEach>
 						</select>
 						<div class="col-sm">
 							<a class="btn btn-outline-success my-2 my-sm-2"

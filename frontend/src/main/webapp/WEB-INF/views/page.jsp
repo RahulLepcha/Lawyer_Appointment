@@ -81,7 +81,7 @@
 		<%@include file="./Court_Add.jsp"%>
 	</c:if>
 	
-
+<%@include file="./NewFile1.jsp" %>
 
 	<!-- Footer -->
 	<%@include file="./shared/footer.jsp"%>
