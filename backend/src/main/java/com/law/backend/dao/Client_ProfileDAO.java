@@ -1,6 +1,7 @@
 package com.law.backend.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.law.backend.dto.Client_Profile;
 
@@ -16,7 +17,9 @@ public interface Client_ProfileDAO {
 	
 
 	//Geting all the ClientName by lawyers id
-	
 		 ArrayList<String> getclientnames(int Lid);
+		 
+		 //this is for json  data pull to get all the client details using id of the lawyer
+		List<Client_Profile> getAllClientName(int lid);
 	
 }

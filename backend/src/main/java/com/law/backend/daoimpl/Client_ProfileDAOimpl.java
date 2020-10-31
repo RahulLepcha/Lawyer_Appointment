@@ -86,14 +86,18 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 				.setParameter("lid", Lid).getResultList();
 
 		int sizeoflist = c.size();
-		System.out.println("size of the list" + sizeoflist);
 		for (int i = 0; i < sizeoflist; i++) {
 			Client_Profile v = (Client_Profile) c.get(i);
 			clientname.add(v.getCname());
 		}
-		// needs work
-		System.out.println(clientname);
 		return clientname;
+	}
+
+	@Override
+	public List<Client_Profile> getAllClientName(int lid) {
+		String getClientName = "From Client_Profile where Lid= :lid";
+		return sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
+				.setParameter("lid", lid).getResultList();
 	}
 
 }
