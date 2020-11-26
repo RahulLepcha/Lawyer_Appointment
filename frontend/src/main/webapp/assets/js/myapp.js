@@ -89,3 +89,4 @@ $('#calendar').fullCalendar({
         },
     ]
 });
+

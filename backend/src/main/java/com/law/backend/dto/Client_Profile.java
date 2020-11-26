@@ -7,23 +7,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Client_Profile {
+public class Client_Profile<HttpServletRequest> {
 	
 	//declaring the attribute
 		@Id
 		@GeneratedValue(strategy =GenerationType.IDENTITY)
-		@Column(name="C_id")
+		@Column(name="C_ID")
 		private int Cid;
-		@Column(name="C_name")
+		@Column(name="C_NAME")
 		private String Cname;
-		@Column(name="C_Moblie")
+		@Column(name="C_MOBLIE")
 		private String CMoblie;
-		@Column(name="C_Email")
+		@Column(name="C_EMAIL")
 		private String CEmail;
-		@Column(name="C_address")
+		@Column(name="C_ADDRESS")
 		private String Caddress;
-		@Column(name="L_id")
-		private int Lid;
+		@Column(name="L_ID")
+		private int Lid=100;
 		
 		//generating getter and setter
 		
@@ -61,7 +61,11 @@ public class Client_Profile {
 			return Lid;
 		}
 		public void setLid(int lid) {
-			Lid = lid;
+			//Profile p=new Profile();
+			int Lid=100;
+			//=p.search("michellesolomon111@gmail.com");
+			//System.out.println(Lid);
+
 		}
 		
 		@Override
@@ -69,6 +73,12 @@ public class Client_Profile {
 			return "Client_Profile [Cid=" + Cid + ", Cname=" + Cname + ", CMoblie=" + CMoblie + ", CEmail=" + CEmail
 					+ ", Caddress=" + Caddress + ", Lid=" + Lid + "]";
 		}
+		
+		public void display() {
+			System.out.println("Client_Profile [Cid=" + Cid + ", Cname=" + Cname + ", CMoblie=" + CMoblie + ", CEmail=" + CEmail
+					+ ", Caddress=" + Caddress + ", Lid=" + Lid + "]");
+		}
+		
 		
 		
 		

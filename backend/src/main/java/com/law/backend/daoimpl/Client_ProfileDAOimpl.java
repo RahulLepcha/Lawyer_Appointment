@@ -1,7 +1,11 @@
 package com.law.backend.daoimpl;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,20 +19,22 @@ import com.law.backend.dto.Profile;
 @Repository("clientprofileDA")
 @Transactional
 public class Client_ProfileDAOimpl implements Client_ProfileDAO {
-
+	Client_Profile p;
 	@Autowired
 	private SessionFactory sessionFactory;
-
+	
 	@Override
 	public Client_Profile get(int id) {
 		return sessionFactory.getCurrentSession().get(Client_Profile.class, Integer.valueOf(id));
 
 	}
-
+	
+	
 	@Override
 	public boolean add(Client_Profile client_Profile) {
 		try {
 			// Adding the profile shit
+			client_Profile.display();
 			sessionFactory.getCurrentSession().persist(client_Profile);
 			return true;
 
@@ -38,6 +44,7 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 			return false;
 		}
 	}
+	
 
 	@Override
 	public boolean update(Client_Profile client_Profile) {
@@ -100,4 +107,71 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 				.setParameter("lid", lid).getResultList();
 	}
 
+
+	@Override
+	public ArrayList<String> getclientnames() {
+		String getClientName = "From Client_Profile";
+		ArrayList<String> clientname = new ArrayList<String>();
+
+		List<Client_Profile> c = sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
+			.getResultList();
+
+		int sizeoflist = c.size();
+		for (int i = 0; i < sizeoflist; i++) {
+			Client_Profile v = (Client_Profile) c.get(i);
+			clientname.add(v.getCname());
+		}
+		return clientname;
+
+	}
+
+
+	@Override
+	public boolean add(HttpServletRequest request) {
+		if (request.getParameter("name")!=null)
+		 {
+           System.out.println("I have reached add");		
+			 p=new Client_Profile();
+	     p.setCname(request.getParameter("name"));
+		 p.setCEmail(request.getParameter("email"));
+        p.setCMoblie(request.getParameter("mobile"));
+        p.setCaddress(request.getParameter("addr"));
+        p.setLid(1);
+       System.out.println(request.getParameter("name"));
+   p.display();
+   
+		
+return add(p);
+		}
+	else return false;
+		// TODO Auo-generated method stub
+		//done
+		
+	// TODO Auto-generated method stub
+		}
+
+	@Override
+	public List<Client_Profile> SearchRecord(String Name) {
+		String getClientName = "From Client_Profile where C_Name= :name";
+	    Client_Profile customer = null;
+ArrayList l=new ArrayList();
+
+		ResultSet  rs= (ResultSet) sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class).setParameter("name", Name).getResultList();
+				return l;
+	}
+
+
+	@Override
+	public Object[] SearchRecords() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/*
+	 * public List<Client_Profile> SearchRecords() {
+	
+		String getClientName = "From Client_Profile";
+		return sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class).getResultList();
+	} */
 }

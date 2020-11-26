@@ -33,9 +33,9 @@ public class CourtTestCase {
 		c.setCrtName("Local_Court_Pune");
 		assertEquals("Succesfully added new Court Profile", true, courtDA.add(c));
 
-		//tes
+		//test and it will fetch the first result
 		String s="Local_Court_Pune";
-		assertEquals("to get the value", 36, courtDA.getCrtId(s));
+		assertEquals("to get the value", 1, courtDA.getCrtId(s));
 	}
 
 }

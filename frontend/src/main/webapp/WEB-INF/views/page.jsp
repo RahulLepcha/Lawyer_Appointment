@@ -65,6 +65,10 @@
 	<c:if test="${UserClickclient_I==true}">
 		<%@include file="./Client/client_I.jsp"%>
 	</c:if>
+	<!-- when client in is clicked -->
+	<c:if test="${UserClickindex==true}">
+		<%@include file="./index.jsp"%>
+	</c:if>
 	
 	<!-- when Case in is clicked -->
 	<c:if test="${UserClickCase_Index==true}">

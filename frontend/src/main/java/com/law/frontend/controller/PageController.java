@@ -1,16 +1,27 @@
 package com.law.frontend.controller;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dao.CourtDAO;
 import com.law.backend.dao.ProfileDAO;
+import com.law.backend.dto.Profile;
+
+import antlr.collections.List;
+
+import com.law.backend.dto.Client_Profile;
 
 @Controller
 public class PageController {
@@ -33,14 +44,19 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/signUp")
-	public ModelAndView signUp() {
+	@RequestMapping(value = "/signUp", method= {RequestMethod.POST,RequestMethod.GET} )
+	@ResponseBody
+	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Sign Up");
 		mv.addObject("UserClicksignUp", true);
+		 mv.addObject("Adding values",profileDA.add(request));
 		return mv;
+	
+	
 	}
 
+	
 	@RequestMapping(value = "/aboutUs")
 	public ModelAndView aboutUs() {
 		ModelAndView mv = new ModelAndView("page");
@@ -57,23 +73,62 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/client_Index")
-	public ModelAndView client_Index() {
+	@RequestMapping(value = "/client_Index" , method= {RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView client_Index(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "client_Index");
 		mv.addObject("UserClickclient_Index", true);
+		System.out.println("Hi");
+
+		if(request.getParameter("Search") == null)
+		{
+		    //mv.addObject("Adding values",clientprofiledao.SearchRecord(request.getParameter("Search")));
+		}
+		else
+		{
+			try {  
+		//		Client_Profile l[]= clientprofiledao.SearchRecord(request.getParameter("Search"));
+					
+			//  System.out.println(l.toString());
+		//	mv.addObject("list",l);
+		}catch(Exception e)
+			{
+			System.out.println("Line 95"+e);
+			}
+		}
+
 		return mv;
 	}
 
-	@RequestMapping(value = "/client_I")
-	public ModelAndView client() {
+	
+
+	@RequestMapping(value = "/client_I", method= {RequestMethod.POST,RequestMethod.GET})
+	@ResponseBody
+	public ModelAndView Client(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "client_Add");
-		mv.addObject("prop", "Add New");
+		mv.addObject("title", "Client Profile");
 		mv.addObject("UserClickclient_I", true);
+		    mv.addObject("Adding values",clientprofiledao.add(request));
+
 		return mv;
+	
+	
 	}
 
+
+	@RequestMapping(value = "/index", method= {RequestMethod.POST,RequestMethod.GET})
+	@ResponseBody
+	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Client Profile");
+		mv.addObject("UserClickindex", true);
+		   
+		return mv;
+	
+	
+	}
+
+	
 	@RequestMapping(value = "/client_II")
 	public ModelAndView clientUpdate() {
 		ModelAndView mv = new ModelAndView("page");
@@ -91,6 +146,7 @@ public class PageController {
 		return mv;
 	}
 
+	
 	@RequestMapping(value = "/Case_I")
 	public ModelAndView Case_I() {
 		ModelAndView mv = new ModelAndView("page");
@@ -101,7 +157,7 @@ public class PageController {
 		mv.addObject("crtNames", crtname);
 		//for Adding client Names According to the userlogin id
 		ArrayList<String> clientName;
-		clientName= (ArrayList<String>)clientprofiledao.getclientnames(1);
+		clientName= (ArrayList<String>)clientprofiledao.getclientnames(36);
 		mv.addObject("clientNames", clientName);
 		mv.addObject("title", "Case_Add");
 		mv.addObject("prop", "Add New");
