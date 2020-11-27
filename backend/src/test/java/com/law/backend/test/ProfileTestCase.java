@@ -36,25 +36,25 @@ public class ProfileTestCase {
 	 */
 String a ,b,c,d;
 	@Test
-	public void testProfileCurd() {
-
-		// Add Opreation to table
-	 Profile p2 = new Profile();
-		a= p2.getUname();
-		b= p2.getUmobile();
-		c = p2.getUemail();
-		d = p2.getUpassword();
-		d = p2.getErem();
-		d = p2.getSrem();
-		d = p2.getRrem();
-		d = p2.getPrem();
-
-		
-		System.out.println(a+b+c+d);
-		    
-		assertEquals("Succesfully added new Profile", true, profileDA.add(p));
-		// Updating the vlue and upadting the value of mobile number
-	}
+//	public void testProfileCurd() {
+//
+//		// Add Opreation to table
+//	 Profile p2 = new Profile();
+//		a= p2.getUname();
+//		b= p2.getUmobile();
+//		c = p2.getUemail();
+//		d = p2.getUpassword();
+////		d = p2.getErem();
+////		d = p2.getSrem();
+////		d = p2.getRrem();
+////		d = p2.getPrem();
+//
+//		
+//		System.out.println(a+b+c+d);
+//		    
+//		assertEquals("Succesfully added new Profile", true, profileDA.add(p));
+//		// Updating the vlue and upadting the value of mobile number
+//	}
    public void testProfileCurd1() {
 
 		// Add Opreation to table
@@ -77,13 +77,13 @@ String a ,b,c,d;
 
 		// Updating the vlue and upadting the value of mobile number
 
-		p = profileDA.get(33);
-		p.setUmobile("8413896733");
-		assertEquals("Succesfully updated the Mobile number", true, profileDA.update(p));
-
-		// deleteing the value from the database
-		p = profileDA.get(34);
-		assertEquals("Succesfully updated the Mobile number", true, profileDA.delete(p));
+//		p = profileDA.get(33);
+//		p.setUmobile("8413896733");
+//		assertEquals("Succesfully updated the Mobile number", true, profileDA.update(p));
+//
+//		// deleteing the value from the database
+//		p = profileDA.get(34);
+//		assertEquals("Succesfully updated the Mobile number", true, profileDA.delete(p));
 
 	}
 

@@ -24,15 +24,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Michelle/.m2/repository/org/apache/tomee/javaee-api/8.0-4/javaee-api-8.0-4.jar" sourcepath="C:/Users/Michelle/.m2/repository/org/apache/tomee/javaee-api/8.0-4/javaee-api-8.0-4-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
-			<attribute name="maven.groupId" value="org.apache.tomee"/>
-			<attribute name="maven.artifactId" value="javaee-api"/>
-			<attribute name="maven.version" value="8.0-4"/>
-			<attribute name="maven.scope" value="provided"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

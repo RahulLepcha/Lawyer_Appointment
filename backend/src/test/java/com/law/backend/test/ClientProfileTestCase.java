@@ -27,14 +27,15 @@ public class ClientProfileTestCase {
 	
 	@Test
 	public void testCourtCurd() {
-		int lid=clientprofileDA.getUid("rema@gmail.com");
+		int lid=clientprofileDA.getUid("chhugain@gmail.com");
 		// Add Opreation to table
 		cp = new Client_Profile();
+		System.out.println("value of rema :"+lid);
 		cp.setLid(lid);
-		cp.setCname("xyz");
-		cp.setCMoblie("8624971999");
-		cp.setCEmail("chhugain@gmail.com");
-		cp.setCaddress("baba black sheep");
+		cp.setCname("Priya");
+		cp.setCMoblie("9732055446");
+		cp.setCEmail("piryakhawas@gmail.com");
+		cp.setCaddress("Darjeeling");
 		
 		assertEquals("Succesfully added new Client Profile", true, clientprofileDA.add(cp));
 

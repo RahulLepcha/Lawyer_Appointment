@@ -50,7 +50,7 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Sign Up");
 		mv.addObject("UserClicksignUp", true);
-		 mv.addObject("Adding values",profileDA.add(request));
+		// mv.addObject("Adding values",profileDA.add(request));
 		return mv;
 	
 	
@@ -108,7 +108,7 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Client Profile");
 		mv.addObject("UserClickclient_I", true);
-		    mv.addObject("Adding values",clientprofiledao.add(request));
+		 //   mv.addObject("Adding values",clientprofiledao.add(request));
 
 		return mv;
 	

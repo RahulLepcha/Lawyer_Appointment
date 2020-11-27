@@ -31,6 +31,27 @@ $(function() {
 			break;
 
 	}
+	
+	var $tabledata=$('#clientNames');
+	if($tabledata.length)
+	{
+		var jsonUrl = '';
+		jsonUrl = window.contextRoot + '/json/data/client_Index/all';
+		
+		$tabledata.DataTable({
+		ajax:{
+			url:jsonUrl,
+			dataSrc:''
+		},
+		columns:[
+			{data:'cid'},
+			{data:'cname'},
+			{data:'cmoblie'},
+			{data:'cemail'},
+			{data:'caddress'}
+		]			
+});
+	}
 });
 $(function () {
 
@@ -89,4 +110,11 @@ $('#calendar').fullCalendar({
         },
     ]
 });
+
+//Logic for displaying all the client names
+
+//creating dummy data set
+
+
+
 

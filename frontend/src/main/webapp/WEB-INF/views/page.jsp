@@ -20,14 +20,17 @@
 
 <title>Lawyer Appointment - ${title}</title>
 <script>
-	window.menu= '${title}';
+	window.menu = '${title}';
+	window.contextRoot='${contextRoot}';
 </script>
 <!-- Bootstrap core CSS -->
 <link href="${vendor}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="${vendor}/bootstrap/css/bootstrap-datepicker.css" rel="stylesheet">
+<link href="${vendor}/bootstrap/css/bootstrap-datepicker.css"
+	rel="stylesheet">
 
 <!-- Custom styles for this template -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 <link href="${css}/custom.css" rel="stylesheet">
 
 </head>
@@ -58,9 +61,9 @@
 	</c:if>
 	<!-- when client in is clicked -->
 	<c:if test="${UserClickclient_Index==true}">
-		<%@include file="./Client/client_Index.jsp"%>
+		<%@include file="./Client/client_Index2.jsp"%>
 	</c:if>
-	
+
 	<!-- when client in is clicked -->
 	<c:if test="${UserClickclient_I==true}">
 		<%@include file="./Client/client_I.jsp"%>
@@ -69,23 +72,23 @@
 	<c:if test="${UserClickindex==true}">
 		<%@include file="./index.jsp"%>
 	</c:if>
-	
+
 	<!-- when Case in is clicked -->
 	<c:if test="${UserClickCase_Index==true}">
 		<%@include file="./Case/Case_Index.jsp"%>
 	</c:if>
-	
-		<!-- when Case_I in is clicked -->
+
+	<!-- when Case_I in is clicked -->
 	<c:if test="${UserClickCase_I==true}">
 		<%@include file="./Case/Case_I.jsp"%>
 	</c:if>
-	
+
 	<!-- when Court_Add in is clicked -->
 	<c:if test="${UserClickCourt_Add==true}">
 		<%@include file="./Court_Add.jsp"%>
 	</c:if>
-	
-<%@include file="./NewFile1.jsp" %>
+
+	<%@include file="./NewFile1.jsp"%>
 
 	<!-- Footer -->
 	<%@include file="./shared/footer.jsp"%>
@@ -95,9 +98,10 @@
 	<script src="${vendor}/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<script src="${vendor}/bootstrap/js/bootstrap-datepicker.min.js"></script>
-
+	<script src="${js}/jquery.dataTables.js"></script>
+	<script src="${js}/dataTables.bootstrap4.js"></script>
 	<script src="${js}/myapp.js"></script>
-	
+
 </body>
 
 </html>

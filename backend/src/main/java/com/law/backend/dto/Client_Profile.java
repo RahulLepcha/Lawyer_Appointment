@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Client_Profile<HttpServletRequest> {
 	
@@ -23,7 +25,8 @@ public class Client_Profile<HttpServletRequest> {
 		@Column(name="C_ADDRESS")
 		private String Caddress;
 		@Column(name="L_ID")
-		private int Lid=100;
+		@JsonIgnore
+		private int Lid;
 		
 		//generating getter and setter
 		
@@ -62,10 +65,10 @@ public class Client_Profile<HttpServletRequest> {
 		}
 		public void setLid(int lid) {
 			//Profile p=new Profile();
-			int Lid=100;
+			//int Lid=100;
 			//=p.search("michellesolomon111@gmail.com");
 			//System.out.println(Lid);
-
+Lid=lid;
 		}
 		
 		@Override

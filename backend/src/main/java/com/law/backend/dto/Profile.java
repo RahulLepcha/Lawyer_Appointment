@@ -7,10 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Profile<HttpServletRequest> {
@@ -51,51 +49,51 @@ public class Profile<HttpServletRequest> {
 	}
 	
 
-	public int getErem() {
-		return Erem;
-	}
-	/**
-	 * @param erem the erem to set
-	 */
-	public void setErem(int erem) {
-		Erem = erem;
-	}
-	/**
-	 * @return the srem
-	 */
-	public int getSrem() {
-		return Srem;
-	}
-	/**
-	 * @param srem the srem to set
-	 */
-	public void setSrem(int srem) {
-		Srem = srem;
-	}
-	/**
-	 * @return the prem
-	 */
-	public int getPrem() {
-		return Prem;
-	}
-	/**
-	 * @param prem the prem to set
-	 */
-	public void setPrem(int prem) {
-		Prem = prem;
-	}
-	/**
-	 * @return the rrem
-	 */
-	public int getRrem() {
-		return Rrem;
-	}
-	/**
-	 * @param rrem2 the rrem to set
-	 */
-	public void setRrem(int rrem) {
-		Rrem = rrem;
-	}
+//	public int getErem() {
+//		return Erem;
+//	}
+//	/**
+//	 * @param erem the erem to set
+//	 */
+//	public void setErem(int erem) {
+//		Erem = erem;
+//	}
+//	/**
+//	 * @return the srem
+//	 */
+//	public int getSrem() {
+//		return Srem;
+//	}
+//	/**
+//	 * @param srem the srem to set
+//	 */
+//	public void setSrem(int srem) {
+//		Srem = srem;
+//	}
+//	/**
+//	 * @return the prem
+//	 */
+//	public int getPrem() {
+//		return Prem;
+//	}
+//	/**
+//	 * @param prem the prem to set
+//	 */
+//	public void setPrem(int prem) {
+//		Prem = prem;
+//	}
+//	/**
+//	 * @return the rrem
+//	 */
+//	public int getRrem() {
+//		return Rrem;
+//	}
+//	/**
+//	 * @param rrem2 the rrem to set
+//	 */
+//	public void setRrem(int rrem) {
+//		Rrem = rrem;
+//	}
 	
 
 
@@ -112,18 +110,7 @@ public class Profile<HttpServletRequest> {
 	private String Upassword;
 	@Column(name="L_Moblie")
 	private String Umobile;
-	@Column(name="Erem")
-	private int Erem;
-	@Column(name="Srem")
-	private int Srem;
-	@Column(name="Prem")
-	private int Prem;
-	@Column(name="Rrem")
-	private int Rrem;
-	/**
-	 * @return the erem
-	 */
-	@Override
+@Override
 	public String toString() {
 		return "Profile [Uid=" + Uid + ", Uname=" + Uname + ", Uemail=" + Uemail + ", Upassword=" + Upassword
 				+ ", Umobile=" + Umobile + "]";

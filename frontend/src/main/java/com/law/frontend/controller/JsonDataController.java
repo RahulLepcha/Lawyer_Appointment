@@ -22,9 +22,15 @@ public class JsonDataController {
 	private CourtDAO courtdao;
 
 	@RequestMapping("/all/{Lid}/clientnames")
-
 	@ResponseBody
 	public List<Client_Profile> getAllClientName(@PathVariable int Lid) {
 		return client_profiledao.getAllClientName(Lid);
+	}
+
+	@RequestMapping("/client_Index/all")
+	@ResponseBody
+	public List<Client_Profile> getAllClientNames()
+	{
+		return client_profiledao.getAllClientNames();
 	}
 }
