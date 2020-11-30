@@ -51,8 +51,6 @@
 			</div>
 			<!--SUbMIT Button-->
 			<button type="submit" class="btn btn-primary">Submit</button>
-			<button type="submit" class="btn secondary" background-color="#fff"><a href="/client_u">Update Client</a></button>
-			<button type="submit" class="btn secondary" background-color="#fff"><a href="/client_d">Delete Client</a></button>
 			
 			<!--end-->
 		</fieldset>

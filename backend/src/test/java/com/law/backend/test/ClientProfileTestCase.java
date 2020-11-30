@@ -32,10 +32,10 @@ public class ClientProfileTestCase {
 		cp = new Client_Profile();
 		System.out.println("value of rema :"+lid);
 		cp.setLid(lid);
-		cp.setCname("Priya");
-		cp.setCMoblie("9732055446");
-		cp.setCEmail("piryakhawas@gmail.com");
-		cp.setCaddress("Darjeeling");
+		cp.setCMoblie("8411879481");
+		cp.setCname("Michelle Solomon");
+		cp.setCEmail("MichelleSolomon@gmail.com");
+		cp.setCaddress("Pune");
 		
 		assertEquals("Succesfully added new Client Profile", true, clientprofileDA.add(cp));
 

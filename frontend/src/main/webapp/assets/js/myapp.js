@@ -48,7 +48,18 @@ $(function() {
 			{data:'cname'},
 			{data:'cmoblie'},
 			{data:'cemail'},
-			{data:'caddress'}
+			{data:'caddress'},
+			{
+				data:'cid',
+				bSortable:false,
+				mRender: function(data,type,row)
+				{
+					var str='';
+					str += '<a href="'+window.contextRoot+ '/Update/'+data+'/Client_profile" ><i class="material-icons">mode_edit</i></a> &#160';
+					str += '<a href="'+window.contextRoot+ '/Delete/'+data+'/Client_profile" ><i class="material-icons">delete_forever</i></a>';
+					return str;
+				}
+			}
 		]			
 });
 	}
