@@ -13,8 +13,8 @@ import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dto.Client_Profile;
 
 @Controller
-@RequestMapping("/Update")
-public class UpdateController {
+@RequestMapping("/Delete")
+public class DeleteController {
 
 		@Autowired
 		Client_ProfileDAO clientprofiledao;
@@ -40,24 +40,20 @@ public class UpdateController {
 //			
 //		 
 
-		    @RequestMapping(value = "/{id}/client_2",method= {RequestMethod.GET})
+		    @RequestMapping(value = "/{id}/client_index",method= {RequestMethod.GET})
 			@ResponseBody
 			public ModelAndView Client2(@PathVariable int id) {
-		    	System.out.println("1Line 45"); 
-				
+		    	
 		    	ModelAndView mv = new ModelAndView("page");
 				mv.addObject("title", "Client Profile");
-				mv.addObject("UserClickclient_I", true);
+				mv.addObject("message", "Do you want to delete?");
+				mv.addObject("UserClickclient_Index", true);
 				Client_Profile cprofile=clientprofiledao.get(id);
-				
 				mv.addObject("c2",cprofile);
-				cprofile.toString();
-				 	
-				
+				cprofile.setStatus(false);
+				clientprofiledao.update(cprofile);
 		    	return mv;
 			}
-
-
 		
 		/* 
 	@RequestMapping(value="/{cid}/Client_profile",method=RequestMethod.GET)

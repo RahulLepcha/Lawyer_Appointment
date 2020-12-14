@@ -23,6 +23,7 @@ public interface Client_ProfileDAO {
 		 //this is for json  data pull to get all the client details using id of the lawyer
 		 List<Client_Profile> getAllClientName(int lid);
 		 List<Client_Profile> getAllClientNames();
+		List<Client_Profile> getAllClientDetails(int data);
 			
 	//	boolean add(HttpServletRequest request);
 //		boolean add(HttpServletRequest request);

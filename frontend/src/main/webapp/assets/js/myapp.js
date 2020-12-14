@@ -5,6 +5,10 @@ $(function() {
 		case 'Home':
 			$('#home').addClass('active');
 			break;
+		case 'client_I':
+			$('#client_I').addClass('active');
+			break;
+	
 		case 'Sign Up':
 			$('#signUp').addClass('active');
 			break;
@@ -55,8 +59,8 @@ $(function() {
 				mRender: function(data,type,row)
 				{
 					var str='';
-					str += '<a href="'+window.contextRoot+ '/Update/'+data+'/Client_profile" ><i class="material-icons">mode_edit</i></a> &#160';
-					str += '<a href="'+window.contextRoot+ '/Delete/'+data+'/Client_profile" ><i class="material-icons">delete_forever</i></a>';
+					str += '<a href="'+window.contextRoot+'/Update/'+data+'/client_2" ><i class="material-icons">mode_edit</i></a> &#160';
+					str += '<a href="'+window.contextRoot+'/Delete/'+data+'/client_index" ><i class="material-icons">delete_forever</i></a>';
 					return str;
 				}
 			}
@@ -71,7 +75,14 @@ $(function () {
         clearBtn: true,
         format: "dd/mm/yyyy"
     });
-
+    $alert=$('.alert');
+    
+    if($alert.length){
+        setTimeout(function(){
+           $alert.fadeout('slow');
+           },3000)
+     }
+           
 
     // FOR DEMO PURPOSE
     $('#reservationDate').on('change', function () {

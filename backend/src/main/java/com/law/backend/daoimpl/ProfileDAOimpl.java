@@ -46,6 +46,7 @@ public class ProfileDAOimpl implements ProfileDAO {
 	public boolean add(Profile profile) {
 		try {
 			//Adding the profile shit
+		
 			sessionFactory.getCurrentSession().persist(profile);
 			return true;
 		
@@ -90,44 +91,5 @@ public class ProfileDAOimpl implements ProfileDAO {
 		return sessionFactory.getCurrentSession().get(Profile.class, Integer.valueOf(id));
 		}
 
-		/*
-		 * @Override public boolean add(HttpServletRequest request) { // do the setter
-		 * part overhere if (request.getParameter("Name")!=null) { if(search(request)) {
-		 * p=new Profile();
-		 * 
-		 * p.setUname(request.getParameter("Name"));
-		 * 
-		 * p.setUemail(request.getParameter("email"));
-		 * 
-		 * p.setUmobile(request.getParameter("mobile"));
-		 * p.setUpassword(request.getParameter("password")); int Rrem,Srem,Erem,Prem; if
-		 * (request.getParameter("Rrem") != null) Rrem=1; else Rrem=0; if
-		 * (request.getParameter("Erem") != null) Erem=1; else Erem=0; if
-		 * (request.getParameter("Srem") != null) Srem=1; else Srem=0; if
-		 * (request.getParameter("Prem") != null) Prem=1; else Prem=0; p.setRrem(Rrem);
-		 * p.setSrem(Srem); p.setPrem(Prem); p.setErem(Erem);
-		 * 
-		 * p.toString();
-		 * 
-		 * return add(p); } else return false; } else return false; // TODO
-		 * Auo-generated method stub //done
-		 * 
-		 * }
-		 * 
-		 * @Override public boolean search(HttpServletRequest request) { String
-		 * userEmail=request.getParameter("email"); String getUserID =
-		 * "From Profile where Uemail = :emailid"; List<Profile> c =
-		 * sessionFactory.getCurrentSession().createQuery(getUserID, Profile.class)
-		 * .setParameter("emailid", userEmail).getResultList(); if (c.isEmpty()) {
-		 * System.out.println("I am sending true"); return true; } else
-		 * System.out.println("I am sending False");
-		 * 
-		 * return false;
-		 * 
-		 * 
-		 * 
-		 * }
-		 */
 	
-
 }

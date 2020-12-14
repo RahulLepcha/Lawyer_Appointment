@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Client_Profile<HttpServletRequest> {
+public class Client_Profile {
 	
 	//declaring the attribute
 		@Id
@@ -27,9 +27,15 @@ public class Client_Profile<HttpServletRequest> {
 		@Column(name="L_ID")
 		@JsonIgnore
 		private int Lid;
+		@Column(name="STATUS")
+		private boolean status;
 		
 		//generating getter and setter
 		
+	public Client_Profile()
+	{
+		
+	}
 		public int getCid() {
 			return Cid;
 		}
@@ -45,8 +51,8 @@ public class Client_Profile<HttpServletRequest> {
 		public String getCMoblie() {
 			return CMoblie;
 		}
-		public void setCMoblie(String cMoblie) {
-			CMoblie = cMoblie;
+		public void setCMoblie(String cMoblie2) {
+			CMoblie = cMoblie2;
 		}
 		public String getCEmail() {
 			return CEmail;
@@ -64,22 +70,23 @@ public class Client_Profile<HttpServletRequest> {
 			return Lid;
 		}
 		public void setLid(int lid) {
-			//Profile p=new Profile();
-			//int Lid=100;
-			//=p.search("michellesolomon111@gmail.com");
-			//System.out.println(Lid);
-Lid=lid;
+			System.out.println(lid);
+           Lid=lid;
 		}
+		public void setStatus(boolean i) {
+			// TODO Auto-generated method stub
+			status=i;
+		}
+		public boolean getStatus() {
+			// TODO Auto-generated method stub
+			return status;
+		}
+		
 		
 		@Override
 		public String toString() {
 			return "Client_Profile [Cid=" + Cid + ", Cname=" + Cname + ", CMoblie=" + CMoblie + ", CEmail=" + CEmail
-					+ ", Caddress=" + Caddress + ", Lid=" + Lid + "]";
-		}
-		
-		public void display() {
-			System.out.println("Client_Profile [Cid=" + Cid + ", Cname=" + Cname + ", CMoblie=" + CMoblie + ", CEmail=" + CEmail
-					+ ", Caddress=" + Caddress + ", Lid=" + Lid + "]");
+					+ ", Caddress=" + Caddress + ", Lid=" + Lid + ", status=" + status + "]";
 		}
 		
 		

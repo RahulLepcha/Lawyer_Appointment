@@ -23,12 +23,12 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
+			<scope>test</scope>  
 		</dependency>
 
 		<!-- Spring Web Mvc -->
 		<dependency>
-			<groupId>org.springframework</groupId>
+		<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>

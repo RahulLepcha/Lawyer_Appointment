@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dao.CourtDAO;
@@ -33,4 +35,7 @@ public class JsonDataController {
 	{
 		return client_profiledao.getAllClientNames();
 	}
+	
+	
+
 }

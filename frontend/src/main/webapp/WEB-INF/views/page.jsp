@@ -72,11 +72,12 @@
 
 	<!-- when client in is clicked -->
 	<c:if test="${UserClickclient_I==true}">
-		<%@include file="./Client/client_I.jsp"%>
+		<%@include file="./Client/client_2.jsp"%>
 	</c:if>
+	
 	<!-- when user clicks any certain profile edit button -->
-	<c:if test="${UserClickedUpdateClientProfile == true }">
-		<%@include file="./Client/client_I.jsp"%>
+	<c:if test="${UserClickedEditClientProfile == true }">
+		<%@include file="./Client/client_2.jsp"%>
 	</c:if>
 	
 
