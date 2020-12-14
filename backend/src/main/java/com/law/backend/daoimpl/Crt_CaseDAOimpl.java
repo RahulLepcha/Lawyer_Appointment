@@ -1,5 +1,6 @@
 package com.law.backend.daoimpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -102,5 +103,51 @@ public class Crt_CaseDAOimpl implements Crt_CaseDAO {
 		Court v=(Court)c.get(0);
 		return v.getCrtid();
 	}
+	
+
+	// Method to get all the client name using id of the current user
+	@Override
+	public List<Client_Profile> getAllCourtcase(int lid) {
+		String getClientName = "From Client_Profile where Lid= :lid and status=TRUE";
+		return sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
+				.setParameter("lid", lid).getResultList();
+	}
+
+
+	@Override
+	public ArrayList<String> getAllCourtcase() {
+		String getClientName = "From Client_Profile where status=TRUE";
+		ArrayList<String> clientname = new ArrayList<String>();
+
+		List<Client_Profile> c = sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
+			.getResultList();
+
+		int sizeoflist = c.size();
+		for (int i = 0; i < sizeoflist; i++) {
+			Client_Profile v = (Client_Profile) c.get(i);
+			clientname.add(v.getCname());
+		}
+		return clientname;
+
+	}
+
+
+	@Override
+	public List<Crt_Case> getAllCourtCases() {
+		String getClientName = " FROM CRT_CASE";
+		return sessionFactory.getCurrentSession().createQuery(getClientName, Crt_Case.class).getResultList();
+		
+	}
+
+	
+	@Override
+	public List getAllCourtDetails(int id) {
+		String getClientName = "FROM CRT_CASE ,CLIENT_PROFILE  where CLIENT_PROFILE.C_id=CRT_CASE.c_id and Cid=:id";
+		return sessionFactory.getCurrentSession().createQuery(getClientName, Crt_Case.class)
+				.setParameter("id", id).getResultList();
+		}
+
+
+
 
 }

@@ -21,38 +21,34 @@ ${message}
 		<div class="col-lg-9">
 				<div class="col-lg-3">
 					<a class="btn btn-outline-success my-2 my-sm-2"
-						href="${contextRoot}/Case_Index" role="button">New</a>
+						href="${contextRoot}/client_index2" role="button">New</a>
 				</div>
 	
 		</div>
 
 		<div class="table-wrapper-scroll-y my-custom-scrollbar">
 
-			<table id="courtcases"
+			<table id="clientNames"
 				class="table table-bordered table-striped mb-0">
 				<thead>
 					<tr>
-						<th scope="col">Case Id</th>
-						<th scope="col">Case Name</th>
-						<th scope="col">Court Id</th>
-						<th scope="col">Opposition</th>
-						<th scope="col">Case Brief</th>
-						<th scope="col">Last Case Date</th>
-						<th scope="col">Priority</th>
-							<th scope="col"></th>
+						<th scope="col">Id</th>
+						<th scope="col">Name</th>
+						<th scope="col">Contact</th>
+						<th scope="col">Email</th>
+						<th scope="col">Address</th>
+						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
-				<th scope="col">Case Id</th>
-						<th scope="col">Client Name</th>
-						<th scope="col">Case Id</th>
-						<th scope="col">Opposition</th>
-						<th scope="col">Case Brief</th>
-						<th scope="col">Last Case Date</th>
-						<th scope="col">Priority</th>
-							<th scope="col"></th>
-				</tr>
+						<th scope="col">Id</th>
+						<th scope="col">Name</th>
+						<th scope="col">Contact</th>
+						<th scope="col">Email</th>
+						<th scope="col">Address</th>
+						<th scope="col"></th>
+					</tr>
 				</tfoot>
 			</table>
 

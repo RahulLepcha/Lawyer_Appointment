@@ -36,6 +36,39 @@ $(function() {
 
 	}
 	
+
+var $tabledata=$('#courtcases');
+	if($tabledata.length)
+	{
+		var jsonUrl = '';
+		jsonUrl = window.contextRoot + '/json/data/Case_Index/all';
+		
+		$tabledata.DataTable({
+		ajax:{
+			url:jsonUrl,
+			dataSrc:''
+		},
+		columns:[
+		{data:'case_uid'},
+			{data:'case_uid'},
+			{data:'opposition_party_name'},
+			{data:'case_brief'},
+			{data:'case_i_date'},
+			{data:'case_priority'},
+			{
+				data:'case_id',
+				bSortable:false,
+				mRender: function(data,type,row)
+				{
+					var str='';
+					str += '<a href="'+window.contextRoot+'/Update/'+data+'/Case_I" ><i class="material-icons">mode_edit</i></a> &#160';
+					str += '<a href="'+window.contextRoot+'/Delete/'+data+'/Case_index" ><i class="material-icons">delete_forever</i></a>';
+					return str;
+				}
+			}
+		]			
+});
+}
 	var $tabledata=$('#clientNames');
 	if($tabledata.length)
 	{
@@ -66,6 +99,8 @@ $(function() {
 			}
 		]			
 });
+
+
 	}
 });
 $(function () {

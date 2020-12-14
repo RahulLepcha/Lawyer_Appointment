@@ -2,7 +2,9 @@
 	<legend>${prop} Case Detail</legend>
 	<form>
 		<fieldset>
-
+<br>
+<br>
+<br>
 			<!-- Client Name Text box-->
 			<div class="form">
 				<div class="row">

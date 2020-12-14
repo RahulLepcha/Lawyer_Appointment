@@ -3,6 +3,7 @@ package com.law.backend.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.law.backend.dto.Client_Profile;
 import com.law.backend.dto.Court;
 
 public interface CourtDAO {
@@ -22,4 +23,6 @@ public interface CourtDAO {
 	
 	 ArrayList<String> getCrtNames();
 
+	
+	
 }

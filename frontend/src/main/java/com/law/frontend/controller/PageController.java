@@ -139,6 +139,42 @@ public class PageController {
 
 	}
 
+	 @RequestMapping(value = "/Case_I") public ModelAndView Case_I() {
+		  ModelAndView mv = new ModelAndView("page");
+		  
+			//for Adding Court Names 
+		  ArrayList<String> crtname; 
+		  crtname =  courtdao.getCrtNames();
+		  mv.addObject("crtNames",crtname); //for Adding client Names According to the userlogin id
+		  ArrayList<String> clientName; 
+		  clientName= (ArrayList<String>)clientprofiledao.getclientnames(85);
+		  mv.addObject("clientNames", clientName); 
+		  mv.addObject("title", "Case_Add");
+		  mv.addObject("prop", "Add New"); 
+		  mv.addObject("UserClickCase_I", true);
+		  return mv; }
+	
+	 
+		
+	 @RequestMapping(value = "/Case_Index" ,method = { RequestMethod.POST, RequestMethod.GET })
+	  public ModelAndView Case_Index(HttpServletRequest request, HttpServletResponse response) {
+			ModelAndView mv = new ModelAndView("page");
+			mv.addObject("title", "client_Index");
+			mv.addObject("UserClickCase_Index", true);
+			if (request.getParameter("Search") == null) {
+				// mv.addObject("Adding
+				// values",clientprofiledao.SearchRecord(request.getParameter("Search")));
+			} else {
+				try {
+						
+				} catch (Exception e) {
+					System.out.println("Line 95" + e);
+				}
+			}
+
+			return mv;
+	 }
+		 
 	/*
 	 * @RequestMapping(value = "/client_II") public ModelAndView clientUpdate() {
 	 * ModelAndView mv = new ModelAndView("page"); mv.addObject("title",

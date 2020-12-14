@@ -81,11 +81,10 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 	// Method to get all the client name using id of the current user
 	@Override
 	public ArrayList<String> getclientnames(int Lid) {
-		String getClientName = "From Client_Profile where Lid= :lid where status=true";
+		String getClientName = "From Client_Profile where Lid= :lid and status=true";
 		ArrayList<String> clientname = new ArrayList<String>();
 
-		List<Client_Profile> c = sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
-				.setParameter("lid", Lid).getResultList();
+		List<Client_Profile> c = sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class).setParameter("lid", Lid).getResultList();
 
 		int sizeoflist = c.size();
 		for (int i = 0; i < sizeoflist; i++) {
@@ -97,7 +96,7 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 
 	@Override
 	public List<Client_Profile> getAllClientName(int lid) {
-		String getClientName = "From Client_Profile where Lid= :lid where status=TRUE";
+		String getClientName = "From Client_Profile where Lid= :lid and status=TRUE";
 		return sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
 				.setParameter("lid", lid).getResultList();
 	}

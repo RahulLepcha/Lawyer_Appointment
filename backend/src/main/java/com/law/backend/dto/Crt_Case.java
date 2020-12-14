@@ -35,7 +35,11 @@ public class Crt_Case {
 	private Boolean CasePriority;
 	@Column(name = "L_id")
 	private int Lid;
-
+	@Column(name = "status")
+	private boolean status;
+	@Column(name = "Case_P_date")
+	private String Casepdate;
+	
 	public int getCrtid() {
 		return Crtid;
 	}
@@ -52,6 +56,12 @@ public class Crt_Case {
 		CaseId = caseId;
 	}
 
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 	public int getCid() {
 		return Cid;
 	}
@@ -104,7 +114,7 @@ public class Crt_Case {
 	public String toString() {
 		return "Crt_Case [CaseId=" + CaseId + ", caseuID=" + caseuID + ", Cid=" + Cid + ", Crtid=" + Crtid
 				+ ", OppositionPartyName=" + OppositionPartyName + ", CaseBrief=" + CaseBrief + ", CaseIdate="
-				+ CaseIdate + ", CasePriority=" + CasePriority + ", Lid=" + Lid + "]";
+				+ CaseIdate + ", CasePriority=" + CasePriority + ", Lid=" + Lid + ", status=" + status + "]";
 	}
 
 }
