@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.law.backend.dao.Case_HearingDAO;
 import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dao.CourtDAO;
+import com.law.backend.dao.Crt_CaseDAO;
 import com.law.backend.dao.ProfileDAO;
 import com.law.backend.dto.Client_Profile;
+import com.law.backend.dto.Crt_Case;
 import com.law.backend.dto.Profile;
 
 @Controller
@@ -33,6 +36,12 @@ public class PageController {
 	@Autowired
 	private Client_ProfileDAO clientprofiledao;
 
+	@Autowired
+	private Crt_CaseDAO CrtCaseDA;
+	
+	@Autowired
+	private Case_HearingDAO CaseHearingDA;
+	
 	@RequestMapping(value = { "/", "/index", "/home" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
@@ -82,7 +91,7 @@ public class PageController {
 
 		return mv;
 	}
-
+	
 	@RequestMapping(value = "/client_2", method = { RequestMethod.POST })
 	public String Client(@ModelAttribute("c2") Client_Profile profile) {
 		if (profile.getLid() == 0) {
@@ -97,6 +106,37 @@ public class PageController {
 		}
 		return "redirect:/client_Index";
 	}
+	
+	 @RequestMapping(value = "/Case_I",method= {RequestMethod.POST})
+	 public String Case_I(@ModelAttribute("case") Crt_Case crtcase,@RequestParam("C_name") String Clientname,@RequestParam("Crt_name") String Crtname) {
+		
+		 crtcase.setCid(CrtCaseDA.getCid(Clientname));
+		 crtcase.setCrtid(CrtCaseDA.getCrtid(Crtname));
+		 CrtCaseDA.add(crtcase);
+			  
+			  return "redirect:/Case_I";
+		  }
+	
+	 @RequestMapping(value = "/Case_I",method= {RequestMethod.GET})
+	 @ResponseBody
+	 public ModelAndView Case_II(@ModelAttribute("case") Crt_Case crtcase) {
+		  ModelAndView mv = new ModelAndView("page");
+		  ArrayList<String> crtname; 
+		  crtname =  courtdao.getCrtNames();
+		  mv.addObject("crtNames",crtname); //for Adding client Names According to the userlogin id
+		  ArrayList<String> clientName; 
+		  clientName= (ArrayList<String>)clientprofiledao.getclientnames(97);
+	  	//for Adding Court Names 
+		  mv.addObject("clientNames", clientName); 
+		 mv.addObject("title", "Case Profile");
+		  mv.addObject("prop", "Update"); 
+		  mv.addObject("UserClickCase_I", true);
+		  mv.addObject("case",crtcase);
+		//  mv.addObject("case",case_Hearing);
+		  return mv; }
+	
+	 
+	 
 	@RequestMapping(value = "/signUp", method = { RequestMethod.POST })
 	public String signUpAdd(@ModelAttribute("Profile") Profile p) {
 		p.setStatus(true);
@@ -139,20 +179,6 @@ public class PageController {
 
 	}
 
-	 @RequestMapping(value = "/Case_I") public ModelAndView Case_I() {
-		  ModelAndView mv = new ModelAndView("page");
-		  
-			//for Adding Court Names 
-		  ArrayList<String> crtname; 
-		  crtname =  courtdao.getCrtNames();
-		  mv.addObject("crtNames",crtname); //for Adding client Names According to the userlogin id
-		  ArrayList<String> clientName; 
-		  clientName= (ArrayList<String>)clientprofiledao.getclientnames(85);
-		  mv.addObject("clientNames", clientName); 
-		  mv.addObject("title", "Case_Add");
-		  mv.addObject("prop", "Add New"); 
-		  mv.addObject("UserClickCase_I", true);
-		  return mv; }
 	
 	 
 		

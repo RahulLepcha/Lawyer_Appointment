@@ -3,6 +3,7 @@ package com.law.backend.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.law.backend.dto.Case_Hearing;
 import com.law.backend.dto.Client_Profile;
 import com.law.backend.dto.Crt_Case;
 
@@ -20,6 +21,8 @@ public interface Crt_CaseDAO {
 	int getCrtid(String CourtName);
 
 
+	
+	
 	List getAllCourtDetails(int id);
 
 

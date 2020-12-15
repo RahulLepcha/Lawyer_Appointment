@@ -93,7 +93,7 @@
 
 	<!-- when Case_I in is clicked -->
 	<c:if test="${UserClickCase_I==true}">
-		<%@include file="./Case/Case_I.jsp"%>
+		<%@include file="./Case/Case_2.jsp"%>
 	</c:if>
 
 	<!-- when Court_Add in is clicked -->

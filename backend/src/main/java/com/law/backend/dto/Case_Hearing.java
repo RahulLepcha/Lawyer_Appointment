@@ -14,15 +14,11 @@ public class Case_Hearing {
 	@Column(name="H_id")
 	private int HId;
 	@Column(name="Case_id")
-	private int CaseId;
-	@Column(name="C_id")
-	private int Cid;
-	@Column(name="Crt_id")
-	private int CrtId;
+	private String caseuID;
 	@Column(name="Stage")
 	private String Stage;
 	@Column(name="Brief")
-	private String Brief;
+	private String CaseBrief;
 	@Column(name="Previous_Date")
 	private String PreviousDate;
 	@Column(name="Next_Date")
@@ -43,23 +39,11 @@ public class Case_Hearing {
 	public void setHId(int hId) {
 		HId = hId;
 	}
-	public int getCaseId() {
-		return CaseId;
+	public String getCaseId() {
+		return caseuID;
 	}
-	public void setCaseId(int caseId) {
-		CaseId = caseId;
-	}
-	public int getCid() {
-		return Cid;
-	}
-	public void setCid(int cid) {
-		Cid = cid;
-	}
-	public int getCrtId() {
-		return CrtId;
-	}
-	public void setCrtId(int crtId) {
-		CrtId = crtId;
+	public void setCaseId(String caseId) {
+		caseuID = caseId;
 	}
 	public String getStage() {
 		return Stage;
@@ -68,10 +52,10 @@ public class Case_Hearing {
 		Stage = stage;
 	}
 	public String getBrief() {
-		return Brief;
+		return CaseBrief;
 	}
 	public void setBrief(String brief) {
-		Brief = brief;
+		CaseBrief = brief;
 	}
 	public String getPreviousDate() {
 		return PreviousDate;
@@ -93,10 +77,12 @@ public class Case_Hearing {
 	}
 	@Override
 	public String toString() {
-		return "Case_Hearing [HId=" + HId + ", CaseId=" + CaseId + ", Cid=" + Cid + ", CrtId=" + CrtId + ", Stage="
-				+ Stage + ", Brief=" + Brief + ", PreviousDate=" + PreviousDate + ", NextDate=" + NextDate
-				+ ", AppointmentTime=" + AppointmentTime + ", Lid=" + Lid + "]";
+		return "Case_Hearing [HId=" + HId + ", caseuID=" + caseuID + ", Stage=" + Stage + ", CaseBrief=" + CaseBrief
+				+ ", PreviousDate=" + PreviousDate + ", NextDate=" + NextDate + ", AppointmentTime=" + AppointmentTime
+				+ ", Lid=" + Lid + "]";
 	}
+	
+
 	
 
 }

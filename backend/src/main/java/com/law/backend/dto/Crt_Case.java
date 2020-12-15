@@ -21,6 +21,13 @@ public class Crt_Case {
 	public void setCaseuID(String caseuID) {
 		this.caseuID = caseuID;
 	}
+	public void setCasePriority(String casePriority) {
+		if(casePriority.equalsIgnoreCase("on"))
+		CasePriority ="on" ;
+		else
+			CasePriority="off";
+	}
+	
 	@Column(name = "C_id")
 	private int Cid;
 	@Column(name = "Crt_id")
@@ -32,14 +39,21 @@ public class Crt_Case {
 	@Column(name = "Case_I_date")
 	private String CaseIdate;
 	@Column(name = "Case_Priority")
-	private Boolean CasePriority;
+	private String CasePriority;
 	@Column(name = "L_id")
 	private int Lid;
 	@Column(name = "status")
-	private boolean status;
-	@Column(name = "Case_P_date")
-	private String Casepdate;
+	private String status;
 	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getCasePriority() {
+		return CasePriority;
+	}
 	public int getCrtid() {
 		return Crtid;
 	}
@@ -56,12 +70,6 @@ public class Crt_Case {
 		CaseId = caseId;
 	}
 
-	public boolean isStatus() {
-		return status;
-	}
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
 	public int getCid() {
 		return Cid;
 	}
@@ -92,14 +100,6 @@ public class Crt_Case {
 
 	public void setCaseIdate(String caseIdate) {
 		CaseIdate = caseIdate;
-	}
-
-	public Boolean getCasePriority() {
-		return CasePriority;
-	}
-
-	public void setCasePriority(Boolean casePriority) {
-		CasePriority = casePriority;
 	}
 
 	public int getLid() {
