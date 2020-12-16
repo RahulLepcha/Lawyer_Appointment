@@ -41,22 +41,23 @@ var $tabledata=$('#courtcases');
 	if($tabledata.length)
 	{
 		var jsonUrl = '';
-		jsonUrl = window.contextRoot + '/json/data/Case_Index/all';
-		
+				jsonUrl = window.contextRoot + '/json/data/Case_Index/all';
+						
 		$tabledata.DataTable({
 		ajax:{
 			url:jsonUrl,
 			dataSrc:''
 		},
 		columns:[
-		{data:'case_uid'},
-			{data:'case_uid'},
-			{data:'opposition_party_name'},
-			{data:'case_brief'},
-			{data:'case_i_date'},
-			{data:'case_priority'},
+			{data:'caseuID'},
+			{data:'caseId'},
+			{data:'crtid'},
+			{data:'oppositionPartyName'},
+			{data:'caseBrief'},
+			{data:'caseIdate'},
+			{data:'casePriority'},
 			{
-				data:'case_id',
+				data:'caseId',
 				bSortable:false,
 				mRender: function(data,type,row)
 				{

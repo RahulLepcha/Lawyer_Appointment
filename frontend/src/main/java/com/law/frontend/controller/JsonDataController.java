@@ -24,6 +24,8 @@ public class JsonDataController {
 	@Autowired
 	private Client_ProfileDAO client_profiledao;
 	private CourtDAO courtdao;
+	
+	@Autowired
 	private Crt_CaseDAO CrtCase;
 
 	@RequestMapping("/all/{Lid}/clientnames")
