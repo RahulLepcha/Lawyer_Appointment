@@ -21,7 +21,7 @@ public interface CourtDAO {
 	
 	//Geting all the court names
 	
-	 ArrayList<String> getCrtNames();
+	 List<Court> getCrtNames();
 
 	
 	

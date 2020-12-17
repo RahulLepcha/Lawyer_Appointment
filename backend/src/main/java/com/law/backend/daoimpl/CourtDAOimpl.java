@@ -86,21 +86,10 @@ public class CourtDAOimpl implements CourtDAO {
 	}
 
 	@Override
-	public ArrayList<String> getCrtNames() {
+	public List<Court> getCrtNames() {
 		String CrtName ="From Court";
-		ArrayList<String> crtname=new ArrayList<String>();
-		List<Court> c =sessionFactory.getCurrentSession().createQuery(CrtName,Court.class).getResultList();
-		int sizeoflist=c.size();
-		System.out.println("size of the list"+sizeoflist);
-		for(int i =0;i<sizeoflist;i++)
-		{
-			Court v=(Court)c.get(i);
-			crtname.add(v.getCrtName());
+		return sessionFactory.getCurrentSession().createQuery(CrtName,Court.class).getResultList();
 		}
-		//needs work
-		System.out.println(crtname);
-		return crtname;
-	}
 	
 	
 
