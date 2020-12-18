@@ -34,7 +34,7 @@ public class Case_Hearing {
 	@Column(name = "Case_Priority")
 	private String CasePriority;
 	@Column(name = "status")
-	private String status;
+	private boolean status;
 	@Column(name="L_id")
 	private int Lid;
 	@Column(name="stage")
@@ -101,11 +101,11 @@ public class Case_Hearing {
 	public void setCaseNdate(String caseNdate) {
 		CaseNdate = caseNdate;
 	}
-	public String getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStatus(boolean b) {
+		this.status = b;
 	}
 	public String getStage() {
 		return Stage;

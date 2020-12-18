@@ -135,6 +135,28 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 				.setParameter("lid", id).getResultList();
 		}
 
+
+	/*
+	@Override
+	public ArrayList getAllClients() {
+		String getClientName = "From Client_Profile where status=TRUE";
+		HashMap<String> clientname = new HashMap<String>();
+
+		List<Client_Profile> c = sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class)
+			.getResultList();
+
+		int sizeoflist = c.size();
+		System.out.println(sizeoflist);
+		for (int i = 0; i < sizeoflist; i++) {
+			Client_Profile v = (Client_Profile) c.get(i);
+			System.out.println(v);
+			clientname.add(v.getCid(),v.getCname());
+		}
+		return clientname;
+
+	}
+
+*/
 	
 //	  @Override public boolean add(HttpServletRequest request) { if
 //	  (request.getParameter("name")!=null) {
@@ -172,3 +194,4 @@ public class Client_ProfileDAOimpl implements Client_ProfileDAO {
 		return sessionFactory.getCurrentSession().createQuery(getClientName, Client_Profile.class).getResultList();
 	} */
 }
+

@@ -24,6 +24,7 @@ public interface Client_ProfileDAO {
 		 List<Client_Profile> getAllClientName(int lid);
 		 List<Client_Profile> getAllClientNames();
 		List<Client_Profile> getAllClientDetails(int data);
+		//ArrayList getAllClients();
 			
 	//	boolean add(HttpServletRequest request);
 //		boolean add(HttpServletRequest request);

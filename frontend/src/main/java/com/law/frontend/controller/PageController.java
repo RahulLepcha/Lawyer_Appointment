@@ -20,6 +20,7 @@ import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dao.CourtDAO;
 import com.law.backend.dao.Crt_CaseDAO;
 import com.law.backend.dao.ProfileDAO;
+import com.law.backend.dto.Case_Hearing;
 import com.law.backend.dto.Client_Profile;
 import com.law.backend.dto.Court;
 import com.law.backend.dto.Crt_Case;
@@ -140,25 +141,41 @@ public class PageController {
 	
 	//making a new method for Case I jsp page
 	
-	@RequestMapping(value="/Case_I",method= {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView Case_I(@ModelAttribute("case") Crt_Case crt_Case) {
+	@RequestMapping(value="/Case_I",method= {RequestMethod.GET})
+	public ModelAndView Case_I(@ModelAttribute("Case1") Crt_Case crt_Case) {
 		ModelAndView mv=new ModelAndView("page");
-		mv.addObject("title","Case Profile");
-		mv.addObject("prop", "New");
-		mv.addObject("UserClickCase_I",true);
-//		Crt_Case crt_Case=new Crt_Case();
-		crt_Case.setLid(129);
-		crt_Case.setStatus("active");
+		mv.addObject("Case1",crt_Case);
+		
+		crt_Case.setLid(148);
+		crt_Case.setStatus(true);
 		crt_Case.setCasePriority("on");
-		System.out.println("in get case i"+crt_Case.toString());
-		
-
-		//		crt_Case.setCaseId(1);
-		mv.addObject("case",crt_Case);
+				mv.addObject("UserClickCase_I",true);
 		return mv;
-		
+			}
+
+	@RequestMapping(value="/Case_I",method= {RequestMethod.POST})
+	public String Case_II(@ModelAttribute("Case1") Crt_Case crt_Case) {
+		CrtCaseDA.add(crt_Case);
+		Case_Hearing  crt_hear=new Case_Hearing();
+		crt_hear.setAppointmentTime(crt_Case.getAppointmentTime());
+		crt_hear.setBrief(crt_Case.getAppointmentTime());
+		crt_hear.setCaseuID(crt_Case.getCaseuID());
+		crt_hear.setCaseIdate(crt_Case.getCaseIdate());
+		crt_hear.setCasePdate(crt_Case.getCasePdate());
+		crt_hear.setCid(crt_Case.getCid());
+		crt_hear.setCrtid(crt_Case.getCrtid());
+		crt_hear.setCaseuID(crt_Case.getCaseuID());
+		crt_hear.setOppositionPartyName(crt_Case.getOppositionPartyName());
+		crt_hear.setStage(crt_Case.getStage());
+		crt_hear.setLid(crt_Case.getLid());
+		crt_hear.setCaseNdate(crt_Case.getCaseNdate());
+		crt_hear.setStatus(true);
+		CaseHearingDA.add(crt_hear);
+			
+		return "redirect:/Case_I";
 	}
-//	
+
+	//	
 //	@RequestMapping(value = "/Case_Insert",method = {RequestMethod.POST})
 //	@ResponseBody
 //	public String Case_I(@ModelAttribute("case") Crt_Case crtcase) {
@@ -187,11 +204,21 @@ public class PageController {
 		return clientprofiledao.getAllClientNames();
 	}
 
+	@RequestMapping(value = "/signUp", method = { RequestMethod.GET })
+	@ResponseBody
+	public ModelAndView signUp(@ModelAttribute("Profile") Profile p) {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Sign Up");
+		mv.addObject("UserClicksignUp", true);
+		mv.addObject("Profile", p);
+		return mv;
+	}
+
 	
 	@RequestMapping(value = "/signUp", method = { RequestMethod.POST })
 	public String signUpAdd(@ModelAttribute("Profile") Profile p) {
 		p.setStatus(true);
-      profileDA.add(p);
+        profileDA.add(p);
 		return "redirect:/";
 
 	}
@@ -208,17 +235,7 @@ public class PageController {
 		
 		return mv;
 	}
-	@RequestMapping(value = "/signUp", method = { RequestMethod.GET })
-	@ResponseBody
-	public ModelAndView signUp(@ModelAttribute("Profile") Profile p) {
-		System.out.println("Line 122");
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Sign Up");
-		mv.addObject("UserClicksignUp", true);
-		mv.addObject("Profile", p);
-		return mv;
-	}
-
+	
 	@RequestMapping(value = "/index", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {

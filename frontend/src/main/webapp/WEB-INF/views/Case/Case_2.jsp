@@ -6,7 +6,7 @@
 <br>
 <div class="container case-wrapper-scroll-y case-custom-scrollbar">
 	<legend>${prop} Case Detail</legend>
-	<sf:form action="${contextRoot}/Case_I" modelAttribute="case" method="POST">
+	<sf:form action="${contextRoot}/Case_I" modelAttribute="Case1" method="POST">
 		<fieldset>
 			<!-- Client Name Text box-->
 			<div class="row">
@@ -18,16 +18,14 @@
 				</div>
 				<div class="col">
 					<label>Priority Case</label>
-					<sf:checkbox path="CasePriority" value="off" />
+					<sf:checkbox path="CasePriority" value="on" />
 				</div>
 			</div>
 			<!-- need to check for the sf auto fill -->
 			<div class="row">
 				<div class="col-sm form-inline">
 					<!-- code for client name -->
-					<sf:select class="form-control" id="Cid" path="Cid"
-						style="width: 150px" items="${ClientName}" itemLabel="Cname"
-						itmeValue="Cid" />
+					<sf:select class="form-control" id="Cid" path="Cid"	style="width: 150px" items="${ClientName}" itemLabel="Cname" itemValue="Cid" />
 					<div class="col-sm">
 						<a class="btn btn-outline-success my-2 my-sm-2"
 							href="${contextRoot}/client_I" role="button">Add Client</a>
@@ -41,7 +39,7 @@
 					<!-- code for court name-->
 					<sf:select class="form-control" id="Crtid" path="Crtid"
 						style="width: 150px" items="${CourtName}" itemLabel="CrtName"
-						itmeValue="Crtid" />
+						itemValue="Crtid" />
 					<div class="col-sm">
 						<a class="btn btn-outline-success my-2 my-sm-2"
 							href="${contextRoot}/Court_Add" role="button">Add</a>

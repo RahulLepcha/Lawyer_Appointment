@@ -31,12 +31,13 @@ public class Crt_Case {
 	private String CaseNdate;
 	@Column(name = "Appointment_Time")
 	private String AppointmentTime;
+	
 	@Column(name = "Case_Priority")
 	private String CasePriority;
 	@Column(name = "L_id")
 	private int Lid;
 	@Column(name = "status")
-	private String status;
+	private boolean status;
 	@Column(name="stage")
 	private String Stage;
 
@@ -64,11 +65,11 @@ public class Crt_Case {
 		this.caseuID = caseuID;
 	}
 
-	public String getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 
