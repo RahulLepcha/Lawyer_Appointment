@@ -31,6 +31,7 @@ public class Case_HearingDAOimpl implements Case_HearingDAO {
 		
 	}
 
+
 	@Override
 	public boolean add(Case_Hearing case_Hearing) {
 		try {

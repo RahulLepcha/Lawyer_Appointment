@@ -17,4 +17,7 @@ public interface Case_HearingDAO {
 	boolean delete (Case_Hearing case_Hearing);
 	
 	Crt_Case getCaseIDs(String clientname,String opponentname);
+
+
+//	Case_Hearing get(String id);
 }

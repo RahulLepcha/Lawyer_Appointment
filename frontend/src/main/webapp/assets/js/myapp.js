@@ -64,6 +64,7 @@ var $tabledata=$('#courtcases');
 					var str='';
 					str += '<a href="'+window.contextRoot+'/Update/'+data+'/Case_I" ><i class="material-icons">mode_edit</i></a> &#160';
 					str += '<a href="'+window.contextRoot+'/Delete/'+data+'/Case_index" ><i class="material-icons">delete_forever</i></a>';
+					
 					return str;
 				}
 			}

@@ -155,10 +155,11 @@ public class PageController {
 
 	@RequestMapping(value="/Case_I",method= {RequestMethod.POST})
 	public String Case_II(@ModelAttribute("Case1") Crt_Case crt_Case) {
+	if(crt_Case.getCaseId()==0) {
 		CrtCaseDA.add(crt_Case);
 		Case_Hearing  crt_hear=new Case_Hearing();
 		crt_hear.setAppointmentTime(crt_Case.getAppointmentTime());
-		crt_hear.setBrief(crt_Case.getAppointmentTime());
+		crt_hear.setBrief(crt_Case.getCaseBrief());
 		crt_hear.setCaseuID(crt_Case.getCaseuID());
 		crt_hear.setCaseIdate(crt_Case.getCaseIdate());
 		crt_hear.setCasePdate(crt_Case.getCasePdate());
@@ -171,7 +172,28 @@ public class PageController {
 		crt_hear.setCaseNdate(crt_Case.getCaseNdate());
 		crt_hear.setStatus(true);
 		CaseHearingDA.add(crt_hear);
-			
+	}
+	else
+	{
+		CrtCaseDA.update(crt_Case);
+		Case_Hearing  crt_hear=new Case_Hearing();
+		crt_hear.setAppointmentTime(crt_Case.getAppointmentTime());
+		crt_hear.setBrief(crt_Case.getCaseBrief());
+		crt_hear.setCaseuID(crt_Case.getCaseuID());
+		crt_hear.setCaseIdate(crt_Case.getCaseIdate());
+		crt_hear.setCasePdate(crt_Case.getCasePdate());
+		crt_hear.setCid(crt_Case.getCid());
+		crt_hear.setCrtid(crt_Case.getCrtid());
+		crt_hear.setCaseuID(crt_Case.getCaseuID());
+		crt_hear.setOppositionPartyName(crt_Case.getOppositionPartyName());
+		crt_hear.setStage(crt_Case.getStage());
+		crt_hear.setLid(crt_Case.getLid());
+		crt_hear.setCaseNdate(crt_Case.getCaseNdate());
+		crt_hear.setStatus(true);
+		CaseHearingDA.add(crt_hear);
+		
+	}
+	
 		return "redirect:/Case_I";
 	}
 
