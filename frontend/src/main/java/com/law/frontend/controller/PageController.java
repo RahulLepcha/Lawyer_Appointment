@@ -155,6 +155,7 @@ public class PageController {
 
 	@RequestMapping(value="/Case_I",method= {RequestMethod.POST})
 	public String Case_II(@ModelAttribute("Case1") Crt_Case crt_Case) {
+		System.out.println(crt_Case.getCaseId()+crt_Case.getCaseId());
 	if(crt_Case.getCaseId()==0) {
 		CrtCaseDA.add(crt_Case);
 		Case_Hearing  crt_hear=new Case_Hearing();
@@ -290,6 +291,25 @@ public class PageController {
 
 			return mv;
 	 }
+	 @RequestMapping(value = "/json/data/CaseHearing_Index/{id}/" ,method = { RequestMethod.POST, RequestMethod.GET })
+	  public ModelAndView Case_HearingIndex(HttpServletRequest request, HttpServletResponse response) {
+			ModelAndView mv = new ModelAndView("page");
+			mv.addObject("title", "client_Index");
+			mv.addObject("Case_HearingIndex", true);
+			if (request.getParameter("Search") == null) {
+				// mv.addObject("Adding
+				// values",clientprofiledao.SearchRecord(request.getParameter("Search")));
+			} else {
+				try {
+						
+				} catch (Exception e) {
+					System.out.println("Line 95" + e);
+				}
+			}
+
+			return mv;
+	 }
+		 
 		 
 	/*
 	 * @RequestMapping(value = "/client_II") public ModelAndView clientUpdate() {

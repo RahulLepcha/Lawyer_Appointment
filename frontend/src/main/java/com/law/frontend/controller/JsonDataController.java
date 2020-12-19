@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.law.backend.dao.Case_HearingDAO;
 import com.law.backend.dao.Client_ProfileDAO;
 import com.law.backend.dao.CourtDAO;
 import com.law.backend.dao.Crt_CaseDAO;
+import com.law.backend.dto.Case_Hearing;
 import com.law.backend.dto.Client_Profile;
 import com.law.backend.dto.Crt_Case;
 
@@ -27,6 +29,9 @@ public class JsonDataController {
 	
 	@Autowired
 	private Crt_CaseDAO CrtCase;
+	
+	@Autowired
+	private Case_HearingDAO CaseHDA;
 
 	@RequestMapping("/all/{Lid}/clientnames")
 	@ResponseBody
@@ -48,6 +53,16 @@ public class JsonDataController {
 	{
 		return CrtCase.getAllCourtCases();
 	}
+	
+	
+	@RequestMapping("/CaseHearing_Index/{id}")
+	@ResponseBody
+	public List<Case_Hearing> getAllCourtCases1(@PathVariable String id)
+	{
+		return CaseHDA.getAllCourtCases(id);
+		
+	}
+	
 	
 	@RequestMapping("/all/{Cid}/Case_I")
 	@ResponseBody

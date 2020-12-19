@@ -134,7 +134,7 @@ public class Crt_CaseDAOimpl implements Crt_CaseDAO {
 
 	@Override
 	public List<Crt_Case> getAllCourtCases() {
-		String getClientName = "From Crt_Case";
+		String getClientName = "From Crt_Case where status=TRUE";
 		return sessionFactory.getCurrentSession().createQuery(getClientName, Crt_Case.class).getResultList();
 		
 	}

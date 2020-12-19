@@ -95,7 +95,10 @@
 	<c:if test="${UserClickCase_I==true}">
 		<%@include file="./Case/Case_2.jsp"%>
 	</c:if>
-
+	<!-- when Case_I in is clicked -->
+	<c:if test="${Case_HearingIndex==true}">
+		<%@include file="./Case/Case_HearingIndex.jsp"%>
+	</c:if>
 	<!-- when Court_Add in is clicked -->
 	<c:if test="${UserClickCourt_Add==true}">
 		<%@include file="./Court_Add.jsp"%>

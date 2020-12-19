@@ -138,6 +138,7 @@
 			</div>
 			<sf:hidden path="Lid" />
 			<sf:hidden path="status" />
+			<sf:hidden path="CaseId" />
 			
 			<!--SUbMIT Button-->
 			<button type="submit" class="btn btn-primary">Submit</button>

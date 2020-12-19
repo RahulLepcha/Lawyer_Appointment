@@ -19,5 +19,8 @@ public interface Case_HearingDAO {
 	Crt_Case getCaseIDs(String clientname,String opponentname);
 
 
+	List<Case_Hearing> getAllCourtCases(String op);
+
+
 //	Case_Hearing get(String id);
 }

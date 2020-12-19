@@ -93,5 +93,13 @@ public class Case_HearingDAOimpl implements Case_HearingDAO {
 		Client_Profile v=(Client_Profile)c.get(0);
 		return v.getCid();
 	}
+	
+	@Override
+	public List<Case_Hearing> getAllCourtCases(String id) {
+		System.out.println(id+id);
+		String getClientName = "From Case_Hearing where status=TRUE and Case_Uid=:id";
+		return sessionFactory.getCurrentSession().createQuery(getClientName, Case_Hearing.class).getResultList();
+		
+	}
 
 }
