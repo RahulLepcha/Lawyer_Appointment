@@ -57,15 +57,14 @@ var $tabledata=$('#courtcases');
 			{data:'caseIdate'},
 			{data:'casePriority'},
 			{
-				data:'caseId',
+				data:'caseuID',
 				bSortable:false,
 				mRender: function(data,type,row)
 				{
 					var str='';
 					str += '<a href="'+window.contextRoot+'/Update/'+data+'/Case_I" ><i class="material-icons">mode_edit</i></a> &#160';
 					str += '<a href="'+window.contextRoot+'/Delete/'+data+'/Case_index" ><i class="material-icons">delete_forever</i></a>&#160';
-					str += '<a href="'+window.contextRoot+'/json/data/CaseHearing_Index/'+data+'/" ><i class="material-icons">format_list_bulleted</i></a>&#160';
-					
+					str += '<a href="'+window.contextRoot+'/Show_History/'+data+'/" ><i class="material-icons">format_list_bulleted</i></a>&#160';
 					return str;
 				}
 			}
@@ -77,6 +76,8 @@ var $tabledata=$('#courtcases');
 var $tabledata=$('#courtHearing');
 	if($tabledata.length)
 	{
+						var jsonUrl = '';
+				jsonUrl = window.contextRoot + '/json/data/Show_History/';
 						
 		$tabledata.DataTable({
 		ajax:{
@@ -85,25 +86,12 @@ var $tabledata=$('#courtHearing');
 		},
 		columns:[
 			{data:'caseuID'},
-			{data:'caseId'},
-			{data:'crtid'},
 			{data:'oppositionPartyName'},
+			{data:'stage'},
+			{data:'appointmentTime'},
 			{data:'caseBrief'},
-			{data:'caseIdate'},
-			{data:'casePriority'},
-			{
-				data:'caseId',
-				bSortable:false,
-				mRender: function(data,type,row)
-				{
-					var str='';
-					str += '<a href="'+window.contextRoot+'/Update/'+data+'/Case_I" ><i class="material-icons">mode_edit</i></a> &#160';
-					str += '<a href="'+window.contextRoot+'/Delete/'+data+'/Case_index" ><i class="material-icons">delete_forever</i></a>&#160';
-					str += '<a href="'+window.contextRoot+'/Show/'+data+'/" ><i class="material-icons">format_list_bulleted</i></a>&#160';
-					
-					return str;
-				}
-			}
+			{data:'casePdate'},
+			{data:'caseNdate'}
 		]			
 });
 }

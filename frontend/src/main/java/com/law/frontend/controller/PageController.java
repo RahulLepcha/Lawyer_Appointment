@@ -44,6 +44,9 @@ public class PageController {
 	@Autowired
 	private Case_HearingDAO CaseHearingDA;
 	
+	public String id="null";
+	
+	
 	@RequestMapping(value = { "/", "/index", "/home" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
@@ -146,7 +149,7 @@ public class PageController {
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("Case1",crt_Case);
 		
-		crt_Case.setLid(148);
+		crt_Case.setLid(129);
 		crt_Case.setStatus(true);
 		crt_Case.setCasePriority("on");
 				mv.addObject("UserClickCase_I",true);
@@ -195,7 +198,7 @@ public class PageController {
 		
 	}
 	
-		return "redirect:/Case_I";
+		return "redirect:/Case_Index";
 	}
 
 	//	
@@ -270,9 +273,21 @@ public class PageController {
 
 	}
 
+	 @RequestMapping(value = "/Show_History/{id}" ,method = { RequestMethod.POST, RequestMethod.GET })
+	  public ModelAndView Case_Index(HttpServletRequest request, HttpServletResponse response,@PathVariable String id) {
+			ModelAndView mv = new ModelAndView("page");
+			mv.addObject("title", "Show History");
+			System.out.println("in show biz");
+			mv.addObject("Case_HearingIndex", true);
+	this.id=id;
+//			mv.addObject("courtHearing",CaseHearingDA.getAllCourtCases(id));
+			return mv;
+	 }
+
+	 public String returnid() {
+		return id;
+	}
 	
-	 
-		
 	 @RequestMapping(value = "/Case_Index" ,method = { RequestMethod.POST, RequestMethod.GET })
 	  public ModelAndView Case_Index(HttpServletRequest request, HttpServletResponse response) {
 			ModelAndView mv = new ModelAndView("page");
@@ -291,24 +306,24 @@ public class PageController {
 
 			return mv;
 	 }
-	 @RequestMapping(value = "/json/data/CaseHearing_Index/{id}/" ,method = { RequestMethod.POST, RequestMethod.GET })
-	  public ModelAndView Case_HearingIndex(HttpServletRequest request, HttpServletResponse response) {
-			ModelAndView mv = new ModelAndView("page");
-			mv.addObject("title", "client_Index");
-			mv.addObject("Case_HearingIndex", true);
-			if (request.getParameter("Search") == null) {
-				// mv.addObject("Adding
-				// values",clientprofiledao.SearchRecord(request.getParameter("Search")));
-			} else {
-				try {
-						
-				} catch (Exception e) {
-					System.out.println("Line 95" + e);
-				}
-			}
-
-			return mv;
-	 }
+//	 @RequestMapping(value = "/json/data/CaseHearing_Index/{id}/" ,method = { RequestMethod.POST, RequestMethod.GET })
+//	  public ModelAndView Case_HearingIndex(HttpServletRequest request, HttpServletResponse response) {
+//			ModelAndView mv = new ModelAndView("page");
+//			mv.addObject("title", "client_Index");
+//			mv.addObject("Case_HearingIndex", true);
+//			if (request.getParameter("Search") == null) {
+//				// mv.addObject("Adding
+//				// values",clientprofiledao.SearchRecord(request.getParameter("Search")));
+//			} else {
+//				try {
+//						
+//				} catch (Exception e) {
+//					System.out.println("Line 95" + e);
+//				}
+//			}
+//
+//			return mv;
+//	 }
 		 
 		 
 	/*

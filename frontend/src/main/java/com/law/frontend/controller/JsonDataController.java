@@ -3,6 +3,9 @@ package com.law.frontend.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +35,8 @@ public class JsonDataController {
 	
 	@Autowired
 	private Case_HearingDAO CaseHDA;
+	@Autowired
+	PageController cont;
 
 	@RequestMapping("/all/{Lid}/clientnames")
 	@ResponseBody
@@ -55,14 +60,14 @@ public class JsonDataController {
 	}
 	
 	
-	@RequestMapping("/CaseHearing_Index/{id}")
+	@RequestMapping("/Show_History/")
 	@ResponseBody
-	public List<Case_Hearing> getAllCourtCases1(@PathVariable String id)
+	public List<Case_Hearing> getAllCourtCases1()
 	{
+		String id=cont.returnid();	
 		return CaseHDA.getAllCourtCases(id);
-		
+			
 	}
-	
 	
 	@RequestMapping("/all/{Cid}/Case_I")
 	@ResponseBody

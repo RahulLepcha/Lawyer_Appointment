@@ -15,44 +15,37 @@ ${message}
 </div>	
 
 </div>	
+<script>
+	window.val = '${id}';
+</script>
 
 <div class="container">
 	<div class="row">
-		<div class="col-lg-9">
-				<div class="col-lg-3">
-					<a class="btn btn-outline-success my-2 my-sm-2"
-						href="${contextRoot}/Case_HearingIndex" role="button">New</a>
-				</div>
-	
-		</div>
-
-		<div class="table-wrapper-scroll-y my-custom-scrollbar">
+			<div class="table-wrapper-scroll-y my-custom-scrollbar">
 
 			<table id="courtHearing"
 				class="table table-bordered table-striped mb-0">
 				<thead>
 					<tr>
 						<th scope="col">Case Id</th>
-						<th scope="col">Case Name</th>
-						<th scope="col">Court Id</th>
 						<th scope="col">Opposition</th>
+						<th scope="col">Stage</th>
+						<th scope="col">Appointment Time</th>
 						<th scope="col">Case Brief</th>
-						<th scope="col">Last Case Date</th>
-						<th scope="col">Priority</th>
-							<th scope="col"></th>
+						<th scope="col">Previous Hearing Date</th>
+						<th scope="col">Previous Hearing Date</th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
-				<th scope="col">Case Id</th>
-						<th scope="col">Client Name</th>
 						<th scope="col">Case Id</th>
 						<th scope="col">Opposition</th>
+						<th scope="col">Stage</th>
+						<th scope="col">Appointment Time</th>
 						<th scope="col">Case Brief</th>
-						<th scope="col">Last Case Date</th>
-						<th scope="col">Priority</th>
-							<th scope="col"></th>
-				</tr>
+						<th scope="col">Previous Hearing Date</th>
+						<th scope="col">Previous Hearing Date</th>
+					</tr>
 				</tfoot>
 			</table>
 
